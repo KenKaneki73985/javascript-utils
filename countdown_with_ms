@@ -1,0 +1,56 @@
+//April 11, 2025 7:51 AM
+// Global variables for countdown
+    let countdownTimer = null;
+    let countdownStartTime = 0;
+
+    function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
+        // Clear existing timer if running
+        if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+        }
+        
+        // Initialize countdown
+        countdownStartTime = Date.now();
+        
+        // Function to update the display
+        function updateDisplay() {
+            const elapsed = (Date.now() - countdownStartTime) / 1000;
+            const remaining = count - elapsed;
+            
+            if (remaining <= 0) {
+                // Stop the timer
+                clearInterval(countdownTimer);
+                countdownTimer = null;
+                
+                // Hide the countdown message
+                window.message.hideMessage(category);
+                
+                return;
+            }
+            
+            // Format the display text with one decimal place
+            const displayText = remaining.toFixed(1);
+            
+            // Show the countdown message
+            // window.message.SHOW_GUI(displayText, category, bgColor, xOffset, yPos, fontSize, 500);
+
+            // COUNTDOWN_WITH_MS(3, "countdown_GUI", "black", -1, 70, 17)
+            window.message.SHOW_GUI(displayText, "countdown_GUI", "black", -1, 70, 17, 500);
+        }
+        
+        // Start the timer to update every 100ms for smoother countdown
+        countdownTimer = setInterval(updateDisplay, 100);
+        
+        // Initial display update
+        updateDisplay();
+        
+        // Return a function to cancel the countdown
+        return function cancelCountdown() {
+            if (countdownTimer) {
+                clearInterval(countdownTimer);
+                countdownTimer = null;
+                window.message.hideMessage(category);
+            }
+        };
+    }
