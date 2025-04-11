@@ -1,4 +1,4 @@
-// April 11, 2025 7:52 AM
+// April 11, 2025 8:53 AM
 class DYNAMIC_MESSAGE {
         constructor() {
             this.messageElements = {}; // Store references to active message elements
@@ -16,12 +16,17 @@ class DYNAMIC_MESSAGE {
             messageElement.style.zIndex = '9999';
             // messageElement.style.padding = '10px 15px'; // orig
             // messageElement.style.padding = '10px 15px 12px 15px'; // top right bot left
-            messageElement.style.padding = '8px 15px 10px 15px'; // top right bot left
+            messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left
             // messageElement.style.border = '3px solid black';
             messageElement.style.borderRadius = '4px';
             // messageElement.style.borderRadius = '10px';
             messageElement.style.color = 'white';
-            messageElement.style.fontFamily = 'SEGOE UI';
+            // messageElement.style.fontFamily = 'SEGOE UI';
+            messageElement.style.fontFamily = 'Verdana, sans-serif';
+            // messageElement.style.fontFamily = "Trebuchet MS, sans-serif";
+            // messageElement.style.fontFamily = "Courier New, monospace";
+            // messageElement.style.fontFamily = "Helvetica, sans-serif";
+            // messageElement.style.fontFamily = "Arial, sans-serif";
             messageElement.style.fontSize = `${fontSize}px`;
             messageElement.style.backgroundColor = bgColor;
             messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
@@ -99,4 +104,4 @@ class DYNAMIC_MESSAGE {
     const message = new DYNAMIC_MESSAGE();
 
     // Make it available globally
-    window.message = message;
+    window.message = mes
