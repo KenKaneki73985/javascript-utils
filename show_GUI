@@ -104,4 +104,4 @@ class DYNAMIC_MESSAGE {
     const message = new DYNAMIC_MESSAGE();
 
     // Make it available globally
-    window.message = mes
+    window.message = message;
