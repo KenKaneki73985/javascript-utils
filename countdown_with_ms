@@ -36,7 +36,7 @@
             // window.message.SHOW_GUI(displayText, category, bgColor, xOffset, yPos, fontSize, 500);
 
             // COUNTDOWN_WITH_MS(3, "countdown_GUI", "black", -1, 70, 17)
-            window.message.SHOW_GUI(displayText, "countdown_GUI", "black", -1, 75, 16, 100);
+            window.message.SHOW_GUI(displayText, "countdown_GUI", "black", -1, 74, 16, 100);
         }
         
         // Start the timer to update every 100ms for smoother countdown
