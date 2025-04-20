@@ -1,4 +1,4 @@
-// April 21, 2025 5:40 AM
+// April 21, 2025 7:38 AM
     function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
         message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
     }
