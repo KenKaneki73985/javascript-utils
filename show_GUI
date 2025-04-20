@@ -7,6 +7,10 @@
         show_GUI("hide status GUI", "STATUS_GUI", "green", 0, 180, 16, 300)
     }
 
+    function hide_GUI(GUI){
+        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
+    }
+
     function log(text) {
         console.log(text)
     }
