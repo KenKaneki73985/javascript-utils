@@ -1,10 +1,14 @@
-// April 21, 2025 5:32 AM
+// April 21, 2025 5:40 AM
     function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
         message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
     }
 
     function hide_status_GUI() {
         show_GUI("hide status GUI", "STATUS_GUI", "green", 0, 180, 16, 300)
+    }
+
+    function log(text) {
+        console.log(text)
     }
 
     class DYNAMIC_MESSAGE {
