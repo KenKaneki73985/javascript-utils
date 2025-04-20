@@ -1,4 +1,4 @@
-    
+//April 21, 2025 5:26 AM    
     function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
         // message.SHOW_GUI("hello", "GUI_v1", "green", 0, 80, 16, 3000)
         message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
