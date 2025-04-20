@@ -1,3 +1,9 @@
+    
+    function SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
+        // message.SHOW_GUI("hello", "GUI_v1", "green", 0, 80, 16, 3000)
+        message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
+    }
+
     class DYNAMIC_MESSAGE {
         constructor() {
             this.messageElements = {}; // Store references to active message elements
