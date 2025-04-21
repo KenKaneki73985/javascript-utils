@@ -1,4 +1,7 @@
-// April 21, 2025 7:38 AM
+// April 21, 2025 1:14 PM
+
+    let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
+
     function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
         message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
     }
