@@ -1,5 +1,9 @@
-// April 22, 2025 4:39 PM
+// April 22, 2025 4:41 PM
 
     function log(text) {
         console.log(text)
+    }
+
+    function selector(id) {
+        return document.querySelector(id)
     }
