@@ -14,10 +14,6 @@
         show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
     }
 
-    function log(text) {
-        console.log(text)
-    }
-
     class DYNAMIC_MESSAGE {
         constructor() {
             this.messageElements = {}; // Store references to active message elements
