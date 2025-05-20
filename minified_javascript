@@ -1,4 +1,4 @@
-// April 22, 2025 4:41 PM
+// May 21, 2025 2:29 AM
 
     function log(text) {
         console.log(text)
@@ -6,4 +6,23 @@
 
     function selector(id) {
         return document.querySelector(id)
+    }
+
+    // ---------- SVG MAKER ----------
+    function SVG_MAKER(pos, top, left, callback, svg_string){
+        let SVG_BTN = document.createElement('button')
+        SVG_BTN.innerHTML = svg_string
+        SVG_BTN.style.border = "none"
+        SVG_BTN.style.position = pos // 'fixed'
+
+        SVG_BTN.style.top = top // '80%'
+        SVG_BTN.style.left = left // '80%'
+        SVG_BTN.style.padding = '0px'
+        SVG_BTN.style.background = "none"
+        SVG_BTN.style.zIndex = '9999'
+        SVG_BTN.addEventListener('click', () => {
+            callback()
+        })
+        
+        document.body.appendChild(SVG_BTN)
     }
