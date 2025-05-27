@@ -1,0 +1,118 @@
+// April 21, 2025 1:14 PM
+
+    let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
+
+    function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
+        message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
+    }
+
+    function hide_GUI(GUI){
+        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
+    }
+
+    class DYNAMIC_MESSAGE {
+        constructor() {
+            this.messageElements = {}; // Store references to active message elements
+            this.fadeTimers = {}; // Store references to fade timers
+        }
+
+        SHOW_GUI(text, category, bgColor = 'green', extraXOffset = 0, yPos = 70, fontSize = 12, duration = 2000) {
+            // Remove existing message with this category if it exists
+            this.hideMessage(category);
+            
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.innerText = text;
+            messageElement.style.position = 'fixed';
+            messageElement.style.zIndex = '9999';
+            // messageElement.style.padding = '10px 15px'; // orig
+            // messageElement.style.padding = '10px 15px 12px 15px'; // top right bot left
+            messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left
+            // messageElement.style.border = '3px solid black';
+            messageElement.style.borderRadius = '4px';
+            // messageElement.style.borderRadius = '10px';
+            messageElement.style.color = 'white';
+            // messageElement.style.fontFamily = 'SEGOE UI';
+            // messageElement.style.fontFamily = "Trebuchet MS, sans-serif";
+            // messageElement.style.fontFamily = "Courier New, monospace";
+            // messageElement.style.fontFamily = "Helvetica, sans-serif";
+            // messageElement.style.fontFamily = "Arial, sans-serif";
+            messageElement.style.fontFamily = 'Verdana, sans-serif';
+            messageElement.style.fontSize = `${fontSize}px`;
+            messageElement.style.backgroundColor = bgColor;
+            messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            messageElement.style.transition = 'opacity 1s ease-in-out';
+            messageElement.style.opacity = '1'; // Start fully visible
+            // messageElement.style.opacity = '.8'; // Start fully visible
+            
+            // Calculate position (in percent)
+            const textLength = text.length;
+            const PERCENT_PER_CHAR = .6;
+            const width = textLength * PERCENT_PER_CHAR;
+            // Auto-center the message with the extraXOffset adjustment
+            const xPos = 50 - (width / 2) + extraXOffset;
+            
+            // Set position in percentage
+            messageElement.style.left = `${xPos}%`;
+            messageElement.style.top = `${yPos}%`;
+            
+            // Add to DOM
+            document.body.appendChild(messageElement);
+            this.messageElements[category] = messageElement;
+            
+            // Set timeout to start fade
+            const fadeDelay = 1000; // Start fading 1000ms before removal
+            const fadeStartTime = duration - fadeDelay;
+            
+            // Clear any existing timers for this category
+            if (this.fadeTimers[category]) {
+                clearTimeout(this.fadeTimers[category]);
+            }
+            
+            // Set timer to start the fadeout
+            this.fadeTimers[category] = setTimeout(() => {
+                if (this.messageElements[category] === messageElement) {
+                    messageElement.style.opacity = '0';
+                    
+                    // Set another timeout for actual removal after fade completes
+                    setTimeout(() => {
+                        // Only remove if this element is still the active one for this category
+                        if (this.messageElements[category] === messageElement) {
+                            this.hideMessage(category);
+                        }
+                    }, fadeDelay);
+                }
+            }, fadeStartTime);
+            
+            return messageElement;
+        }
+        
+        // Hide/remove a specific message
+        hideMessage(category) {
+            if (this.messageElements[category]) {
+                document.body.removeChild(this.messageElements[category]);
+                delete this.messageElements[category];
+                
+                // Clear any pending fade timers
+                if (this.fadeTimers[category]) {
+                    clearTimeout(this.fadeTimers[category]);
+                    delete this.fadeTimers[category];
+                }
+            }
+        }
+        
+        // Hide all active messages
+        hideAllMessages() {
+            for (const category in this.messageElements) {
+                if (this.messageElements.hasOwnProperty(category)) {
+                    this.hideMessage(category);
+                }
+            }
+        }
+    }
+
+    // Create a global instance of the message system
+    const message = new DYNAMIC_MESSAGE();
+
+    // Make it available globally
+    window.message = message;
