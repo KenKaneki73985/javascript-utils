@@ -1,5 +1,15 @@
-// May 26, 2025 3:47 PM
+// May 30, 10:31 PM 2025
 
+    let CONTINUE_LOOP = true
+
+    function STOP_LOOP() {
+        show_GUI("stop loop", "GUI_v1", "red", 0, 80, 16, 3000)
+        CONTINUE_LOOP = false
+
+        setTimeout(() => {
+            CONTINUE_LOOP = true
+        }, 1000);
+    }
 
     // ---------- NEW (SET WINTITLE) ----------
     let HAS_EXECUTED = false
