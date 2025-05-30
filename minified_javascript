@@ -8,6 +8,7 @@
 
         setTimeout(() => {
             STAY_LOOP = true
+            show_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, 80, 16, 2000)
         }, 1000);
     }
 
