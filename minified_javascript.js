@@ -1,13 +1,13 @@
 // May 30, 10:31 PM 2025
 
-    let CONTINUE_LOOP = true
+    let STAY_LOOP = true
 
     function STOP_LOOP() {
         show_GUI("stop loop", "GUI_v1", "red", -1, 80, 16, 3000)
-        CONTINUE_LOOP = false
+        STAY_LOOP = false
 
         setTimeout(() => {
-            CONTINUE_LOOP = true
+            STAY_LOOP = true
         }, 1000);
     }
 
