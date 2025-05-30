@@ -12,21 +12,20 @@
         }, 1000);
     }
 
-    // ---------- NEW (SET WINTITLE) ----------
+    // ---------- SET WINTITLE ----------
     let HAS_EXECUTED = false
     let ORIGINAL_TITLE = false
 
     function GET_ORIGINAL_TITLE(){
         if (HAS_EXECUTED) return
         ORIGINAL_TITLE = document.title
-        // setTimeout(() => { HAS_EXECUTED = false }, 36000000) // don't get title ever again
-        HAS_EXECUTED = true
+        // setTimeout(() => { HAS_EXECUTED = false }, 36000000) 
+        HAS_EXECUTED = true // don't get title ever again
     }    
     
     async function SET_WINTITLE(signal, data = '') {
-        // issue: it gets the wrong title, because "get original title" invokes immediately even before changing back to original title
-        // ORIGINAL_TITLE = document.title 
-        GET_ORIGINAL_TITLE() 
+        // ORIGINAL_TITLE = document.title; issue: it gets wrong title, coz "get original title" invokes immediately even before changing back to original title
+        GET_ORIGINAL_TITLE()  
         
         document.title = signal + " " + data
         log("success: wintitle set: " + signal)
@@ -34,8 +33,8 @@
         await sleep(2000) // 2 seconds
         document.title = ORIGINAL_TITLE
     }
+    // ---------- END SET WINTITLE ----------
 
-    // ---------- END NEW (SET WINTITLE) ----------
 
     function log(text) {
         console.log(text)
