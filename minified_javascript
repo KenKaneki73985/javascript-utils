@@ -9,7 +9,7 @@
         setTimeout(() => {
             STAY_LOOP = true
             show_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, 75, 16, 2000)
-        }, 1000);
+        }, 500);
     }
 
     // ---------- SET WINTITLE ----------
