@@ -3,7 +3,7 @@
     let STAY_LOOP = true
 
     function STOP_LOOP() {
-        show_GUI("stop loop", "GUI_v1", "red", -1, 75, 16, 3000)
+        show_GUI("stop loop", "GUI_v1", "red", -1, 75, 14, 3000)
         STAY_LOOP = false
 
         setTimeout(() => {
