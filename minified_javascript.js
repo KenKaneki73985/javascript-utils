@@ -1,6 +1,6 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // July 07, 11:00 PM 2025
+    // July 07, 11:06 PM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
@@ -35,8 +35,8 @@
         document.title = signal + " " + data
         log("success: wintitle set: " + signal)
 
-        // await sleep(seconds) // 2 seconds
-        await sleep(2000)
+        await sleep(seconds) // 2 seconds
+        // await sleep(2000)
         document.title = ORIGINAL_TITLE
     }
 
