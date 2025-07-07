@@ -1,5 +1,4 @@
-July 07, 9:50 PM 2025
-
+// July 07, 10:19 PM 2025
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     
@@ -27,6 +26,8 @@ July 07, 9:50 PM 2025
     }    
     
     async function SET_WINTITLE(signal, data = '', seconds = 2000) {
+    // async function SET_WINTITLE(signal, data = '') {
+
         // ORIGINAL_TITLE = document.title; issue: it gets wrong title, coz "get original title" invokes immediately even before changing back to original title
         GET_ORIGINAL_TITLE()  
         
@@ -34,10 +35,11 @@ July 07, 9:50 PM 2025
         log("success: wintitle set: " + signal)
 
         await sleep(seconds) // 2 seconds
+        // await sleep(2000)
         document.title = ORIGINAL_TITLE
     }
 
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬ END SET WINTITLE ▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬ FUNCTIONS ▬▬▬▬▬▬▬▬▬▬▬▬▬
 
     function log(text) {
         console.log(text)
