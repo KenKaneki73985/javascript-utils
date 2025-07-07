@@ -1,6 +1,6 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // July 07, 10:36 PM 2025
+    // July 07, 11:00 PM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
@@ -24,9 +24,9 @@
         HAS_EXECUTED = true // don't get title ever again
     }    
     
-    // async function SET_WINTITLE(signal, data = '', seconds = 2000) {
+    async function SET_WINTITLE(signal, data = '', seconds = 2000) {
     // async function SET_WINTITLE(signal, data = '', seconds) {
-    async function SET_WINTITLE(signal, data = '') {
+    // async function SET_WINTITLE(signal, data = '') {
 
         // seconds = seconds || 2000; // Default to 2000 if not provided
         // ORIGINAL_TITLE = document.title; issue: it gets wrong title, coz "get original title" invokes immediately even before changing back to original title
