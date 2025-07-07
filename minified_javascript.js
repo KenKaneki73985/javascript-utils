@@ -1,18 +1,21 @@
-// May 30, 10:31 PM 2025
+July 07, 9:50 PM 2025
 
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    
     let STAY_LOOP = true
 
     function STOP_LOOP() {
-        show_GUI("stop loop", "GUI_v1", "red", -1, 75, 14, 3000)
+        show_GUI("stop loop", "GUI_v1", "red", 0, 80, 16, 3000)
         STAY_LOOP = false
 
         setTimeout(() => {
             STAY_LOOP = true
-            show_GUI("stay loop: true", "GUI_v1", "blue", 0, 75, 14, 2000)
-        }, 500);
+            show_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, 80, 16, 2000)
+        }, 1000);
     }
 
-    // ---------- SET WINTITLE ----------
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬ SET WINTITLE ▬▬▬▬▬▬▬▬▬▬▬▬▬
     let HAS_EXECUTED = false
     let ORIGINAL_TITLE = false
 
@@ -23,18 +26,18 @@
         HAS_EXECUTED = true // don't get title ever again
     }    
     
-    async function SET_WINTITLE(signal, data = '') {
+    async function SET_WINTITLE(signal, data = '', seconds = 2000) {
         // ORIGINAL_TITLE = document.title; issue: it gets wrong title, coz "get original title" invokes immediately even before changing back to original title
         GET_ORIGINAL_TITLE()  
         
         document.title = signal + " " + data
         log("success: wintitle set: " + signal)
 
-        await sleep(2000) // 2 seconds
+        await sleep(seconds) // 2 seconds
         document.title = ORIGINAL_TITLE
     }
-    // ---------- END SET WINTITLE ----------
 
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬ END SET WINTITLE ▬▬▬▬▬▬▬▬▬▬▬▬▬
 
     function log(text) {
         console.log(text)
@@ -44,7 +47,7 @@
         return document.querySelector(id)
     }
 
-    // ---------- SVG MAKER ----------
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
     function SVG_MAKER(pos, top, left, callback, svg_string){
         let SVG_BTN = document.createElement('button')
         SVG_BTN.innerHTML = svg_string
@@ -62,3 +65,6 @@
         
         document.body.appendChild(SVG_BTN)
     }
+
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
