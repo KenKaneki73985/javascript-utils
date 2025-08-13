@@ -1,6 +1,7 @@
+
     //                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // August 13, 6:00 PM 2025
+    // August 13, 7:33 PM 2025
     let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
@@ -45,11 +46,19 @@
             const text_length = text.length
             let xpos_percent = 0
 
+            // pinVSCODE
             // ─── FONT SIZE 17 ─────────────
             if (fontSize == 17){
                 const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
                 // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
                 xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
+            } 
+
+            // ─── FONT SIZE 15 ─────────────
+            else if (fontSize == 15){
+                const percent_per_char = text_length * 0.28 // 0.31 (ok for short)
+                // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
+                xpos_percent = 49.3 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
             } 
             
             // ─── FONT SIZE NOT SET ─────────────
