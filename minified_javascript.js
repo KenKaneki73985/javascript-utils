@@ -1,15 +1,15 @@
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // July 08, 3:58 PM 2025
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (minified javascript) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // August 13, 8:36 PM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
-        show_GUI("stop loop", "GUI_v1", "red", 0, 80, 16, 3000)
+        SHOW_GUI("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
         STAY_LOOP = false
 
         setTimeout(() => {
             STAY_LOOP = true
-            show_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, 80, 16, 2000)
+            SHOW_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, "y80", 16, 2000)
         }, 1000);
     }
 
