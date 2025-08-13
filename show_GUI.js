@@ -1,13 +1,16 @@
-// April 21, 2025 1:14 PM
+//                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// August 13, 5:24 PM 2025
 
     let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
-    function show_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
+    function SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
+        // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
     }
 
     function hide_GUI(GUI){
-        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
+        SHOW_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
     }
 
     class DYNAMIC_MESSAGE {
@@ -16,7 +19,7 @@
             this.fadeTimers = {}; // Store references to fade timers
         }
 
-        SHOW_GUI(text, category, bgColor = 'green', extraXOffset = 0, yPos = 70, fontSize = 12, duration = 2000) {
+        SHOW_GUI(text, category, bgColor = 'green', extraXOffset = 0, ypos_percent = "y10", fontSize = 10, duration = 2000) {
             // Remove existing message with this category if it exists
             this.hideMessage(category);
             
@@ -25,19 +28,10 @@
             messageElement.innerText = text;
             messageElement.style.position = 'fixed';
             messageElement.style.zIndex = '9999';
-            // messageElement.style.padding = '10px 15px'; // orig
-            // messageElement.style.padding = '10px 15px 12px 15px'; // top right bot left
             messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left
-            // messageElement.style.border = '3px solid black';
             messageElement.style.borderRadius = '4px';
-            // messageElement.style.borderRadius = '10px';
             messageElement.style.color = 'white';
-            // messageElement.style.fontFamily = 'SEGOE UI';
-            // messageElement.style.fontFamily = "Trebuchet MS, sans-serif";
-            // messageElement.style.fontFamily = "Courier New, monospace";
-            // messageElement.style.fontFamily = "Helvetica, sans-serif";
-            // messageElement.style.fontFamily = "Arial, sans-serif";
-            messageElement.style.fontFamily = 'Verdana, sans-serif';
+            messageElement.style.fontFamily = "Consolas";
             messageElement.style.fontSize = `${fontSize}px`;
             messageElement.style.backgroundColor = bgColor;
             messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
@@ -45,31 +39,48 @@
             messageElement.style.opacity = '1'; // Start fully visible
             // messageElement.style.opacity = '.8'; // Start fully visible
             
-            // Calculate position (in percent)
-            const textLength = text.length;
-            const PERCENT_PER_CHAR = .6;
-            const width = textLength * PERCENT_PER_CHAR;
-            // Auto-center the message with the extraXOffset adjustment
-            const xPos = 50 - (width / 2) + extraXOffset;
+            // ▬▬▬ CENTERING ▬▬▬▬▬▬▬▬▬▬▬▬▬
+            // higher num = text goes left more (for text_length * 5.1)
+            // lower num = text goes right more (for text_length * 5.1)
+    
+            const text_length = text.length
+            let xpos_percent = 0
+
+            // ─── FONT SIZE 17 ─────────────
+            if (fontSize == 17){
+                const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
+                // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
+                xpos_percent = 49.2 - percent_per_char + extraXOffset // 49.2 (ok for 0.31 perc)
+            } 
             
-            // Set position in percentage
-            messageElement.style.left = `${xPos}%`;
-            messageElement.style.top = `${yPos}%`;
-            
-            // Add to DOM
+            // ─── FONT SIZE NOT SET ─────────────
+            else {
+                const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
+                xpos_percent = 49.2 - percent_per_char + extraXOffset // 49.2 (ok for 0.31 perc)
+            }
+
+            // ▬▬▬ X POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
+            messageElement.style.left = `${xpos_percent}%`
+
+            // ▬▬▬ Y POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
+            const numeric_part_ypos = ypos_percent.replace(/[^0-9]/g, '');
+            const integer_ypos_percent = parseInt(numeric_part_ypos, 10)
+            messageElement.style.top = `${integer_ypos_percent}%`
+
+            // ─── Add to DOM ─────────────
             document.body.appendChild(messageElement);
             this.messageElements[category] = messageElement;
             
-            // Set timeout to start fade
+            // ─── Set timeout to start fade ─────────────
             const fadeDelay = 1000; // Start fading 1000ms before removal
             const fadeStartTime = duration - fadeDelay;
             
-            // Clear any existing timers for this category
+            // ─── Clear any existing timers for this category ─────────────
             if (this.fadeTimers[category]) {
                 clearTimeout(this.fadeTimers[category]);
             }
             
-            // Set timer to start the fadeout
+            // ─── Set timer to start the fadeout ─────────────
             this.fadeTimers[category] = setTimeout(() => {
                 if (this.messageElements[category] === messageElement) {
                     messageElement.style.opacity = '0';
@@ -116,3 +127,6 @@
 
     // Make it available globally
     window.message = message;
+
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    //                       \▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬/
