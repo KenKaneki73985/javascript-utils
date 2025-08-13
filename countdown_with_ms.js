@@ -1,6 +1,6 @@
-// May 21, 2025 3:02 AM
-    // ------------------------------------------------------------------------
-    // ---------------------- START OF GITHUB COPY/PASTE ----------------------
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (countdown ms) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// August 13, 5:39 PM 2025
 
     // Global variables for countdown
     let countdownTimer = null;
@@ -37,7 +37,7 @@
             
             // pinVSCODE
             // Show the countdown message
-            show_GUI(displayText, "countdown_GUI", "black", -1, 74, 17, 100)
+            SHOW_GUI(displayText, "countdown_GUI", "black", 0, "y75", 17, 100)
         }
         
         // Start the timer to update every 100ms for smoother countdown
@@ -56,5 +56,5 @@
         };
     }
 
-    // ---------------------- END OF GITHUB COPY/PASTE ----------------------
-    // ----------------------------------------------------------------------
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
