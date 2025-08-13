@@ -1,12 +1,11 @@
-//                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// August 13, 5:24 PM 2025
-
+    //                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // August 13, 6:00 PM 2025
     let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
-    function SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time){
+    function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
-        message.SHOW_GUI(text, GUI, color, xloc_offset, yloc, fontsize, time)
+        message.SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
     }
 
     function hide_GUI(GUI){
@@ -19,7 +18,7 @@
             this.fadeTimers = {}; // Store references to fade timers
         }
 
-        SHOW_GUI(text, category, bgColor = 'green', extraXOffset = 0, ypos_percent = "y10", fontSize = 10, duration = 2000) {
+        SHOW_GUI(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
             // Remove existing message with this category if it exists
             this.hideMessage(category);
             
@@ -50,20 +49,20 @@
             if (fontSize == 17){
                 const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
                 // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
-                xpos_percent = 49.2 - percent_per_char + extraXOffset // 49.2 (ok for 0.31 perc)
+                xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
             } 
             
             // ─── FONT SIZE NOT SET ─────────────
             else {
                 const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
-                xpos_percent = 49.2 - percent_per_char + extraXOffset // 49.2 (ok for 0.31 perc)
+                xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
             }
 
             // ▬▬▬ X POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
             messageElement.style.left = `${xpos_percent}%`
 
             // ▬▬▬ Y POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
-            const numeric_part_ypos = ypos_percent.replace(/[^0-9]/g, '');
+            const numeric_part_ypos = ypos.replace(/[^0-9]/g, '');
             const integer_ypos_percent = parseInt(numeric_part_ypos, 10)
             messageElement.style.top = `${integer_ypos_percent}%`
 
