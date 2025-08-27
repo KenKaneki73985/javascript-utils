@@ -1,10 +1,15 @@
 
     //                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // August 13, 7:33 PM 2025
+    // August 27, 11:10 PM 2025
     let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
+        // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
+        message.SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+    }
+
+    function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
     }
