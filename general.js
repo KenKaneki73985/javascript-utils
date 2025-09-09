@@ -1,8 +1,7 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (minified javascript) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // September 10, 1:00 AM 2025
-
-    let STAY_LOOP = true
+    // September 10, 1:04 AM 2025
+    // let STAY_LOOP = true
 
     function gen_STOP_LOOP() {
         show_GUI("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
@@ -15,8 +14,8 @@
     }
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬ SET WINTITLE ▬▬▬▬▬▬▬▬▬▬▬▬▬
-    let HAS_EXECUTED = false
-    let ORIGINAL_TITLE = false
+    // let HAS_EXECUTED = false
+    // let ORIGINAL_TITLE = false
 
     function gen_GET_ORIGINAL_TITLE(){
         if (HAS_EXECUTED) return
@@ -37,13 +36,13 @@
     }
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬ FUNCTIONS ▬▬▬▬▬▬▬▬▬▬▬▬▬
-    function log(text) {
-        console.log(text)
-    }
+    // function log(text) {
+    //     console.log(text)
+    // }
 
-    function selector(id) {
-        return document.querySelector(id)
-    }
+    // function selector(id) {
+    //     return document.querySelector(id)
+    // }
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
     function gen_SVG_MAKER(pos, top, left, callback, svg_string){
