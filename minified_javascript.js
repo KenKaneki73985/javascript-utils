@@ -1,6 +1,6 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (minified javascript) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // August 13, 8:36 PM 2025
+    // September 10, 12:33 AM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
@@ -62,6 +62,30 @@
         
         document.body.appendChild(SVG_BTN)
     }
+
+    // ▬▬▬ GET POSTS ▬▬▬▬▬▬▬▬▬▬▬▬▬
+    function GET_POSTS(container, callback) {
+        let POSTS_CONTAINER = document.querySelector(container)
+
+        if (POSTS_CONTAINER) {
+            show_GUI("found post container", "GUI_v1", "blue", 0, "y80", 17, 3000)
+
+            let POSTS_LIST = POSTS_CONTAINER.children;
+            
+            for (let index = 0; index < POSTS_LIST.length; index++) {
+                callback(index, POSTS_LIST)
+            }
+        } 
+        
+        else {
+            show_GUI("error: post container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
+        }
+    }
+
+    // function POST_ACTION(index, POSTS_LIST) {
+    //     log(`───────── Post ${index + 1} ─────────`)
+    //     log(POSTS_LIST[index].innerText)
+    // }
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
