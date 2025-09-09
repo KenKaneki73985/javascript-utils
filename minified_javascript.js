@@ -1,15 +1,15 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (minified javascript) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // September 10, 12:41 AM 2025
+    // September 10, 12:48 AM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
-        SHOW_GUI("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
+        show_GUI("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
         STAY_LOOP = false
 
         setTimeout(() => {
             STAY_LOOP = true
-            SHOW_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, "y80", 16, 2000)
+            show_GUI("STAY LOOP: true", "GUI_v1", "blue", 0, "y80", 16, 2000)
         }, 1000);
     }
 
@@ -82,13 +82,13 @@
         }
     }
 
-    function TEST_HELLO() {
-        alert("test hello")
-    }
-
     // function POST_ACTION(index, POSTS_LIST) {
     //     log(`───────── Post ${index + 1} ─────────`)
     //     log(POSTS_LIST[index].innerText)
+    // }
+
+    // function TEST_HELLO() {
+    //     alert("test hello")
     // }
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
