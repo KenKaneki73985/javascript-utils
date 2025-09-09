@@ -1,6 +1,6 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (minified javascript) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // September 10, 12:33 AM 2025
+    // September 10, 12:41 AM 2025
     let STAY_LOOP = true
 
     function STOP_LOOP() {
@@ -80,6 +80,10 @@
         else {
             show_GUI("error: post container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
         }
+    }
+
+    function TEST_HELLO() {
+        alert("test hello")
     }
 
     // function POST_ACTION(index, POSTS_LIST) {
