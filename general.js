@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 22, 4:45 AM 2025
+// September 22, 5:14 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -62,7 +62,7 @@ function gen_SVG_MAKER(pos, top, left, callback, svg_string){
 }
 
 // ▬▬▬ GET POSTS ▬▬▬▬▬▬▬▬▬▬▬▬▬
-function gen_GET_POSTS(container, callback) {
+function gen_GET_POSTS_DO_ACTION(container, callback) {
     
     let PostsContainer = document.querySelector(container)
 
@@ -72,7 +72,7 @@ function gen_GET_POSTS(container, callback) {
         // let TopChildren_arr = Array.from(PostsContainer.children)
         // TopChildren_arr.forEach(callback)
 
-        let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children
+        let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children / descendant
 
         for (let index = 0; index < TopChildren_arr.length; index++) {
             callback(TopChildren_arr, index)
@@ -84,7 +84,7 @@ function gen_GET_POSTS(container, callback) {
     }
 }
 
-// function POST_ACTION(index, TopChildren_arr) {
+// function POST_ACTION(TopChildren_arr, index) {
 //     log(`───────── Post ${index + 1} ─────────`)
 //     log(TopChildren_arr[index].innerText)
 // }
