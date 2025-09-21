@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 22, 4:20 AM 2025
+// September 22, 4:28 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -64,15 +64,15 @@ function gen_SVG_MAKER(pos, top, left, callback, svg_string){
 // ▬▬▬ GET POSTS ▬▬▬▬▬▬▬▬▬▬▬▬▬
 function gen_GET_POSTS(container, callback) {
     
-    let POSTS_CONTAINER = document.querySelector(container)
+    let PostsContainer = document.querySelector(container)
 
-    if (POSTS_CONTAINER) {
+    if (PostsContainer) {
         show_GUI("found post container", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
-        // let TopLevelChildren_arr = Array.from(POSTS_CONTAINER.children)
+        // let TopLevelChildren_arr = Array.from(PostsContainer.children)
         // TopLevelChildren_arr.forEach(callback)
 
-        let TopLevelChildren_arr = POSTS_CONTAINER.children
+        let TopLevelChildren_arr = PostsContainer.children
 
         for (let index = 0; index < TopLevelChildren_arr.length; index++) {
             callback(TopLevelChildren_arr, index)
