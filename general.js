@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 22, 4:33 AM 2025
+// September 22, 4:45 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -69,13 +69,13 @@ function gen_GET_POSTS(container, callback) {
     if (PostsContainer) {
         show_GUI("success: found posts container", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
-        // let TopLevelChildren_arr = Array.from(PostsContainer.children)
-        // TopLevelChildren_arr.forEach(callback)
+        // let TopChildren_arr = Array.from(PostsContainer.children)
+        // TopChildren_arr.forEach(callback)
 
-        let TopLevelChildren_arr = PostsContainer.children
+        let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children
 
-        for (let index = 0; index < TopLevelChildren_arr.length; index++) {
-            callback(TopLevelChildren_arr, index)
+        for (let index = 0; index < TopChildren_arr.length; index++) {
+            callback(TopChildren_arr, index)
         }
     } 
     
@@ -84,9 +84,9 @@ function gen_GET_POSTS(container, callback) {
     }
 }
 
-// function POST_ACTION(index, TopLevelChildren_arr) {
+// function POST_ACTION(index, TopChildren_arr) {
 //     log(`───────── Post ${index + 1} ─────────`)
-//     log(TopLevelChildren_arr[index].innerText)
+//     log(TopChildren_arr[index].innerText)
 // }
 
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
