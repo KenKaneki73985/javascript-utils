@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 22, 6:11 AM 2025
+// September 22, 6:14 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -80,7 +80,7 @@ function gen_GET_POSTS_DO_ACTION(container, callback) {
     } 
     
     else {
-        show_GUI("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
+        // show_GUI("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
         log("────> error: posts container not found")
     }
 }
