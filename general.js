@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 22, 4:28 AM 2025
+// September 22, 4:33 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -67,7 +67,7 @@ function gen_GET_POSTS(container, callback) {
     let PostsContainer = document.querySelector(container)
 
     if (PostsContainer) {
-        show_GUI("found post container", "GUI_v1", "blue", 0, "y80", 17, 3000)
+        show_GUI("success: found posts container", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
         // let TopLevelChildren_arr = Array.from(PostsContainer.children)
         // TopLevelChildren_arr.forEach(callback)
@@ -80,7 +80,7 @@ function gen_GET_POSTS(container, callback) {
     } 
     
     else {
-        show_GUI("error: post container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
+        show_GUI("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
     }
 }
 
