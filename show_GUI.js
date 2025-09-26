@@ -1,21 +1,18 @@
-
-    //                       /▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // August 27, 11:10 PM 2025
-    let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
-
+    // September 26, 1:07 PM 2025
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
-        // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
-        message.SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+        // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
+        message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
     }
 
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
-        // message.SHOW_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
-        message.SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+        // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
+        message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
     }
 
     function hide_GUI(GUI){
-        SHOW_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
+        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
     }
 
     class DYNAMIC_MESSAGE {
@@ -24,7 +21,7 @@
             this.fadeTimers = {}; // Store references to fade timers
         }
 
-        SHOW_GUI(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
+        show_GUI(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
             // Remove existing message with this category if it exists
             this.hideMessage(category);
             
@@ -142,4 +139,4 @@
     window.message = message;
 
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    //                       \▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬/
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
