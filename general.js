@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 26, 1:08 PM 2025
+// September 27, 2:24 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -35,7 +35,22 @@ async function gen_SET_WINTITLE(signal, data = '', ms = 2000) {
     document.title = ORIGINAL_TITLE
 }
 
-// ▬▬▬▬▬▬▬▬▬▬▬▬▬ FUNCTIONS ▬▬▬▬▬▬▬▬▬▬▬▬▬
+async function gen_WaitTextToExist(text, message="hide"){
+    while (true) {
+
+        let BODY = document.querySelector("body")
+        
+        if (BODY.innerText.includes(text)){
+            if (message == "show"){
+                show_GUI("success: found " + text , "GUI_v1", "blue", 0, "y80", 17, 3000)
+            } 
+            
+            break
+        }
+        await sleep(100)
+    }
+}
+
 function log(text) {
     console.log(text)
 }
