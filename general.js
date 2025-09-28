@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 27, 2:24 PM 2025
+// September 29, 5:42 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -59,7 +59,7 @@ function selector(id) {
     return document.querySelector(id)
 }
 
-// ▬▬▬▬▬▬▬▬▬▬▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
 function gen_SVG_MAKER(pos, top, left, callback, svg_string){
     let SVG_BTN = document.createElement('button')
     SVG_BTN.innerHTML = svg_string
@@ -84,24 +84,32 @@ function gen_GET_POSTS_DO_ACTION(container, callback) {
     let PostsContainer = document.querySelector(container)
 
     if (PostsContainer) {
-        // show_GUI("success: found posts container", "GUI_v1", "blue", 0, "y80", 17, 3000)
+        // show_GUI("success: found PostsContainer", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
-        // let TopChildren_arr = Array.from(PostsContainer.children)
-        // TopChildren_arr.forEach(callback)
-
-        let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children / descendant
-
-        for (let index = 0; index < TopChildren_arr.length; index++) {
-            callback(TopChildren_arr, index)
-        }
+        // ─── YOU SHOULD USE FOREACH, LOOKS CLEANER. ─────────────
+        let TopChildren_arr = Array.from(PostsContainer.children)
+        TopChildren_arr.forEach(callback)
+        
+        // ─── FOR LOOP ─────────────
+        // let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children / descendant
+        // for (let index = 0; index < TopChildren_arr.length; index++) {
+        //     callback(TopChildren_arr, index)
+        // }
     } 
     
     else {
         // show_GUI("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
-        log("────> error: posts container not found")
+        log("❌ error: PostsContainer not found (gen_GET_POSTS_DO_ACTION)")
     }
 }
 
+// ─── FOREEACH ─────────────
+// function POST_ACTION(SingleTopChild, index, array) {
+//     log(`───────── Post ${index + 1} ─────────`)
+//     log(SingleTopChild.innerText)
+// }
+
+// ─── FOR LOOP ─────────────
 // function POST_ACTION(TopChildren_arr, index) {
 //     log(`───────── Post ${index + 1} ─────────`)
 //     log(TopChildren_arr[index].innerText)
