@@ -1,16 +1,16 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // September 28, 8:16 AM 2025
+    // September 28, 10:01 AM 2025
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
-        log(text)
+        // log(text)
     }
 
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
-        log(text)
+        // log(text)
     }
 
     function hide_GUI(GUI){
