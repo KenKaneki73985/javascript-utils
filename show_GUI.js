@@ -1,18 +1,20 @@
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // September 26, 1:07 PM 2025
+    // September 28, 8:16 AM 2025
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+        log(text)
     }
 
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+        log(text)
     }
 
     function hide_GUI(GUI){
-        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100)
+        show_GUI("hide GUI", GUI, "green", 0, 180, 16, 100) // 180 = vertically hidden
     }
 
     class DYNAMIC_MESSAGE {
