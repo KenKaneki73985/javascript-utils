@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 29, 5:42 AM 2025
+// September 29, 5:50 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -35,6 +35,10 @@ async function gen_SET_WINTITLE(signal, data = '', ms = 2000) {
     document.title = ORIGINAL_TITLE
 }
 
+function log(text) {
+    console.log(text)
+}
+
 async function gen_WaitTextToExist(text, message="hide"){
     while (true) {
 
@@ -49,14 +53,6 @@ async function gen_WaitTextToExist(text, message="hide"){
         }
         await sleep(100)
     }
-}
-
-function log(text) {
-    console.log(text)
-}
-
-function selector(id) {
-    return document.querySelector(id)
 }
 
 // ▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -91,7 +87,7 @@ function gen_GET_POSTS_DO_ACTION(container, callback) {
         TopChildren_arr.forEach(callback)
         
         // ─── FOR LOOP ─────────────
-        // let TopChildren_arr = PostsContainer.children // get top level (direct / immediate) children / descendant
+        // let TopChildren_arr = PostsContainer.children // get top level/direct/immediate children/descendant
         // for (let index = 0; index < TopChildren_arr.length; index++) {
         //     callback(TopChildren_arr, index)
         // }
