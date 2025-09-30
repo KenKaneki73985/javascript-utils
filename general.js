@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 29, 5:50 AM 2025
+// September 30, 4:44 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -75,9 +75,9 @@ function gen_SVG_MAKER(pos, top, left, callback, svg_string){
 }
 
 // ▬▬▬ GET POSTS ▬▬▬▬▬▬▬▬▬▬▬▬▬
-function gen_GET_POSTS_DO_ACTION(container, callback) {
+function gen_GetTopChildrenDoAction(ContainerID, callback) {
     
-    let PostsContainer = document.querySelector(container)
+    let PostsContainer = document.querySelector(ContainerID)
 
     if (PostsContainer) {
         // show_GUI("success: found PostsContainer", "GUI_v1", "blue", 0, "y80", 17, 3000)
@@ -95,7 +95,7 @@ function gen_GET_POSTS_DO_ACTION(container, callback) {
     
     else {
         // show_GUI("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
-        log("❌ error: PostsContainer not found (gen_GET_POSTS_DO_ACTION)")
+        log("❌ error: PostsContainer not found (gen_GetTopChildrenDoAction)")
     }
 }
 
@@ -110,6 +110,47 @@ function gen_GET_POSTS_DO_ACTION(container, callback) {
 //     log(`───────── Post ${index + 1} ─────────`)
 //     log(TopChildren_arr[index].innerText)
 // }
+
+// SAMPLE for gen_FindTextElement()
+// let FoundElement = gen_FindTextElement("Songs")
+// FoundElement.style.border = "3px solid yellow"
+// FoundElement.click()
+
+function gen_FindTextElement(text){
+    let BODY = document.querySelector("body")
+    let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
+
+    // Find element containing "Songs" text
+    let FoundElement = AllElements_arr.find(FindTextElement)
+
+    function FindTextElement(OneElement){
+        // Check if the element's direct text content includes "Songs" (not including text from child elements)
+
+        let OneElementChildNodes_arr = Array.from(OneElement.childNodes)
+
+        if (OneElementChildNodes_arr.some(FindTextNode)){
+            return true
+        }
+
+        function FindTextNode(OneNode) {
+            if (OneNode.nodeType === Node.TEXT_NODE && OneNode.textContent == text){
+                return true
+            }
+        }
+    }
+
+    if (FoundElement) {
+        // show_GUI("☑️ success: found FoundElement", "GUI_v1", "blue", 0, "y80", 17, 3000)
+        log("☑️ success: found FoundElement (find string element)")
+        return FoundElement
+    } 
+    
+    else {
+        // show_GUI("❌ error: not found FoundElement", "GUI_v1", "red", 0, "y80", 17, 3000)
+        log("❌ error: not found FoundElement (find string element)")
+        return false
+    }
+}
 
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
