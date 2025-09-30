@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 30, 4:44 PM 2025
+// September 30, 4:49 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -40,17 +40,20 @@ function log(text) {
 }
 
 async function gen_WaitTextToExist(text, message="hide"){
+
     while (true) {
 
         let BODY = document.querySelector("body")
         
         if (BODY.innerText.includes(text)){
-            if (message == "show"){
-                show_GUI("success: found " + text , "GUI_v1", "blue", 0, "y80", 17, 3000)
+
+            if (message == "showGUI"){
+                show_GUI("☑️ success: found " + text , "GUI_v1", "blue", 0, "y80", 17, 3000)
             } 
             
             break
         }
+
         await sleep(100)
     }
 }
