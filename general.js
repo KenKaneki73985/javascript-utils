@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 30, 6:30 PM 2025
+// September 30, 6:32 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -101,9 +101,10 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
 // FoundElement.click()
 
 let RunFindTextElement = true
+
 async function gen_WaitTextToExist(text, message="hide"){
 
-    RunFindTextElement = false
+    // RunFindTextElement = false
 
     while (true) {
 
@@ -116,7 +117,7 @@ async function gen_WaitTextToExist(text, message="hide"){
             } 
             
             log('☑️ success: found ' + text + ' (gen_WaitTextToExist)')
-            RunFindTextElement = true
+            // RunFindTextElement = true
             break
         }
 
@@ -127,10 +128,10 @@ async function gen_WaitTextToExist(text, message="hide"){
 
 async function gen_FindTextElement(text){
 
-    if (!RunFindTextElement){
-        log('❌ did not run gen_FindTextElement. RunFindTextElement = false')
-        return // <---
-    }
+    // if (!RunFindTextElement){
+    //     log('❌ did not run gen_FindTextElement. RunFindTextElement = false')
+    //     return // <---
+    // }
 
     let BODY = document.querySelector("body")
     let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
