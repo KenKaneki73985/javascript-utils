@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 30, 6:07 PM 2025
+// September 30, 6:17 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -121,7 +121,7 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
 // FoundElement.style.border = "3px solid yellow"
 // FoundElement.click()
 
-function gen_FindTextElement(text){
+async function gen_FindTextElement(text){
     let BODY = document.querySelector("body")
     let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
 
