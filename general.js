@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 30, 6:55 PM 2025
+// September 30, 7:33 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -141,14 +141,15 @@ function gen_FindTextElement(text){
     }
 
     if (FoundElement) {
-        // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
-        log('☑️ success: found ' + text + ' (gen_FindTextElement)')
+        show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
+        console.log('☑️ success: found ' + text + ' (gen_FindTextElement)')
+        console.log('☑️ FoundElement: ' + FoundElement)
         return FoundElement
     } 
     
     else {
         // show_GUI('❌ error: not found ' + text + ' (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000)
-        log('❌ error: not found ' + text + ' (gen_FindTextElement)')
+        console.log('❌ error: not found ' + text + ' (gen_FindTextElement)')
         return false
     }
 }
