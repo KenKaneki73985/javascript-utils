@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// September 30, 7:33 PM 2025
+// September 30, 7:51 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -104,7 +104,7 @@ async function gen_WaitTextToExist(text, message="hide"){
         if (BODY.innerText.includes(text)){
 
             if (message == "showGUI"){
-                show_GUI("☑️ success: found " + text , "GUI_v1", "blue", 0, "y80", 17, 3000)
+                show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000)
             } 
             
             log('☑️ success: found ' + text + ' (gen_WaitTextToExist)')
@@ -116,10 +116,11 @@ async function gen_WaitTextToExist(text, message="hide"){
     }
 }
 
-// SAMPLE for gen_FindTextElement()
+// ─── example for gen_FindTextElement() ─────────────
 // let FoundElement = gen_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
 // FoundElement.click()
+
 function gen_FindTextElement(text){
     let BODY = document.querySelector("body")
     let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
