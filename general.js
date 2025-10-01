@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 01, 4:50 PM 2025
+// October 01, 5:09 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -104,7 +104,7 @@ async function gen_WaitTextToExist(text, message="hide"){
         if (BODY.innerText.includes(text)){
 
             if (message == "showGUI"){
-                // show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000)
+                show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000)
             } 
             
             log('☑️ success: found ' + text + ' (gen_WaitTextToExist)')
