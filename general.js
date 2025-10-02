@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 02, 11:42 AM 2025
+// October 02, 12:31 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -117,46 +117,45 @@ async function gen_WaitTextToExist(text, message="hide"){
 }
 
 // ─── example for gen_FindTextElement() ─────────────
-// let FoundTextElement = gen_FindTextElement("Songs")
-// FoundTextElement.style.border = "3px solid yellow"
-// FoundTextElement.click()
+// let FoundElement = gen_FindTextElement("Songs")
+// FoundElement.style.border = "3px solid yellow"
+// FoundElement.click()
 
 function gen_FindTextElement(text){
     let BODY = document.querySelector("body")
     let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
 
     // ─── FIND TEXT ELEMENT ─────────────
-    let FoundTextElement = AllElements_arr.find(FindTextElement)
+    let FoundElement = AllElements_arr.find(FindTextElement)
 
-    function FindTextElement(OneElement){
+    function FindTextElement(element){
 
-        let OneElementChildNodes_arr = Array.from(OneElement.childNodes)
+        let ElementChildNodes_arr = Array.from(element.childNodes)
 
-        if (OneElementChildNodes_arr.some(FindTextNode)){
+        if (ElementChildNodes_arr.some(FindTextNode)){
             return true
         } else {
-            log('❌ error: not found OneElementChildNodes_arr.some(FindTextNode)')
+            log('❌ error: not found ElementChildNodes_arr.some(FindTextNode)')
         }
 
         // ─── FUNCTION ─────────────
-        function FindTextNode(OneNode) {
-            if (OneNode.nodeType === Node.TEXT_NODE && OneNode.textContent == text){
+        function FindTextNode(node) {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent == text){
                 return true
             }
         }
     }
 
-    if (FoundTextElement) {
+    if (FoundElement) {
         // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
         console.log('☑️ success: found ' + text + ' (gen_FindTextElement)')
-        console.log('☑️ FoundTextElement: ' + FoundTextElement)
-        return FoundTextElement
+        console.log('☑️ FoundElement: ' + FoundElement)
+        return FoundElement
     } 
     
     else {
         // show_GUI('❌ error: not found ' + text + ' (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000)
         console.log('❌ error: not found ' + text + ' (gen_FindTextElement)')
-        return false
     }
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
