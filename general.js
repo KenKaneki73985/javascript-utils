@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 02, 12:49 PM 2025
+// October 02, 1:12 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -120,7 +120,6 @@ async function gen_WaitTextToExist(text, message="hide"){
 // let FoundElement = gen_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
 // FoundElement.click()
-
 function gen_FindTextElement(text){
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
@@ -131,15 +130,13 @@ function gen_FindTextElement(text){
 
         let ElementChildNodes_arr = Array.from(element.childNodes)
         
-        if (ElementChildNodes_arr.some(FindTextNode)){
+        if (ElementChildNodes_arr.some(FindElementTextNode)){
             return true
-        } else {
-            log('❌ error: not found ElementChildNodes_arr.some(FindTextNode)')
         }
 
         // ─── FUNCTION ─────────────
-        function FindTextNode(node) {
-            if (node.nodeType === Node.TEXT_NODE && node.textContent == text){
+        function FindElementTextNode(ElementNode) {
+            if (ElementNode.nodeType === Node.TEXT_NODE && ElementNode.textContent == text){
                 return true
             }
         }
@@ -157,5 +154,19 @@ function gen_FindTextElement(text){
         console.log('❌ error: not found ' + text + ' (gen_FindTextElement)')
     }
 }
+
+// function test(callback){
+//     callback()
+// }
+
+// function hello(){
+//     alert("hello there")
+// }
+
+// let catcher = hello() // you mean catcher will become undefined here?
+
+// what happens if no text node found in FindElementTextNode?
+// this if above does not have explicit else statement that return something.
+// if FindElementTextNode
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
