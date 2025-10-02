@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 01, 5:09 PM 2025
+// October 02, 11:42 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -117,14 +117,16 @@ async function gen_WaitTextToExist(text, message="hide"){
 }
 
 // ─── example for gen_FindTextElement() ─────────────
-// let FoundElement = gen_FindTextElement("Songs")
-// FoundElement.style.border = "3px solid yellow"
-// FoundElement.click()
+// let FoundTextElement = gen_FindTextElement("Songs")
+// FoundTextElement.style.border = "3px solid yellow"
+// FoundTextElement.click()
 
 function gen_FindTextElement(text){
     let BODY = document.querySelector("body")
     let AllElements_arr = Array.from(BODY.querySelectorAll("*"))
-    let FoundElement = AllElements_arr.find(FindTextElement)
+
+    // ─── FIND TEXT ELEMENT ─────────────
+    let FoundTextElement = AllElements_arr.find(FindTextElement)
 
     function FindTextElement(OneElement){
 
@@ -132,12 +134,11 @@ function gen_FindTextElement(text){
 
         if (OneElementChildNodes_arr.some(FindTextNode)){
             return true
-        } 
-        
-        else {
+        } else {
             log('❌ error: not found OneElementChildNodes_arr.some(FindTextNode)')
         }
 
+        // ─── FUNCTION ─────────────
         function FindTextNode(OneNode) {
             if (OneNode.nodeType === Node.TEXT_NODE && OneNode.textContent == text){
                 return true
@@ -145,11 +146,11 @@ function gen_FindTextElement(text){
         }
     }
 
-    if (FoundElement) {
+    if (FoundTextElement) {
         // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
         console.log('☑️ success: found ' + text + ' (gen_FindTextElement)')
-        console.log('☑️ FoundElement: ' + FoundElement)
-        return FoundElement
+        console.log('☑️ FoundTextElement: ' + FoundTextElement)
+        return FoundTextElement
     } 
     
     else {
