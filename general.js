@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 03, 12:25 PM 2025
+// October 03, 5:54 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -107,7 +107,7 @@ async function gen_WaitTextToExist(text, message="hide"){
             break
         }
 
-        log('⏳ waiting for ' + text + ' (gen_WaitTextToExist)')
+        log('⏳ waiting for "' + text + '" (gen_WaitTextToExist)')
         await sleep(100)
     }
 }
@@ -115,7 +115,6 @@ async function gen_WaitTextToExist(text, message="hide"){
 // ─── example for gen_FindTextElement() ─────────────
 // let FoundElement = gen_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
-// FoundElement.click()
 function gen_FindTextElement(text){
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
@@ -145,9 +144,10 @@ function gen_FindTextElement(text){
         return FoundElement
     } 
     
-    else {
+    else if (!FoundElement) {
         // show_GUI('❌ error: not found ' + text + ' (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000)
         log('❌ error: not found ' + text + ' (gen_FindTextElement)')
+        return false
     }
 }
 
