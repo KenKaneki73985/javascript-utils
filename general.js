@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 03, 10:29 AM 2025
+// October 03, 12:18 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -103,7 +103,7 @@ async function gen_WaitTextToExist(text, message="hide"){
 
             message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
-            log('☑️ success: found ' + text + ' (gen_WaitTextToExist)')
+            log('☑️ success: found "' + text + '" (gen_WaitTextToExist)')
             break
         }
 
@@ -140,14 +140,14 @@ function gen_FindTextElement(text){
 
     if (FoundElement) {
         // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
-        console.log('☑️ success: found ' + text + ' (gen_FindTextElement)')
-        console.log('☑️ FoundElement: ' + FoundElement)
+        log('☑️ success: found ' + text + ' (gen_FindTextElement)')
+        log('☑️ FoundElement: ' + FoundElement + ' (gen_FindTextElement)')
         return FoundElement
     } 
     
     else {
         // show_GUI('❌ error: not found ' + text + ' (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000)
-        console.log('❌ error: not found ' + text + ' (gen_FindTextElement)')
+        log('❌ error: not found ' + text + ' (gen_FindTextElement)')
     }
 }
 
