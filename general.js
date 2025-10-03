@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 03, 12:18 PM 2025
+// October 03, 12:25 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -140,7 +140,7 @@ function gen_FindTextElement(text){
 
     if (FoundElement) {
         // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
-        log('☑️ success: found ' + text + ' (gen_FindTextElement)')
+        log('☑️ success: found "' + text + '" (gen_FindTextElement)')
         log('☑️ FoundElement: ' + FoundElement + ' (gen_FindTextElement)')
         return FoundElement
     } 
