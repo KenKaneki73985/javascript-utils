@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 02, 5:06 PM 2025
+// October 03, 10:29 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -101,9 +101,7 @@ async function gen_WaitTextToExist(text, message="hide"){
 
         if (document.body.innerText.includes(text)){
 
-            if (message == "showGUI"){
-                show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000)
-            } 
+            message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
             log('☑️ success: found ' + text + ' (gen_WaitTextToExist)')
             break
@@ -133,8 +131,8 @@ function gen_FindTextElement(text){
         }
 
         // ─── FUNCTION ─────────────
-        function FindElementTextNode(ElementNode) {
-            if (ElementNode.nodeType === Node.TEXT_NODE && ElementNode.textContent == text){
+        function FindElementTextNode(ChildNode) {
+            if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text){
                 return true
             }
         }
