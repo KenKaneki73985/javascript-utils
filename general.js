@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 05, 11:04 AM 2025
+// October 05, 3:59 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -102,11 +102,11 @@ async function gen_WaitTextToExist(text, message="hide"){
         if (document.body.innerText.includes(text)){
 
             message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
-            
             log('☑️ success: found "' + text + '" (gen_WaitTextToExist)')
             break
         }
 
+        message == "showGUI" ? show_GUI('⏳ waiting for "' + text + '" (gen_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
         log('⏳ waiting for "' + text + '" (gen_WaitTextToExist)')
         await sleep(100)
     }
@@ -120,12 +120,13 @@ async function gen_WaitElementToExist(ElementID, message="hide"){
 
         if (Element){
 
-            message == "showGUI" ? show_GUI('☑️ success: found ' + Element + ' (gen_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            message == "showGUI" ? show_GUI('☑️ success: found "' + Element + '" (gen_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
             log('☑️ success: found "' + Element + '" (gen_WaitElementToExist)')
             break
         }
 
+        message == "showGUI" ? show_GUI('⏳ waiting for "' + Element + '" (gen_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
         log('⏳ waiting for "' + Element + '" (gen_WaitElementToExist)')
         await sleep(100)
     }
@@ -134,7 +135,7 @@ async function gen_WaitElementToExist(ElementID, message="hide"){
 // ─── example for gen_FindTextElement() ─────────────
 // let FoundElement = gen_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
-function gen_FindTextElement(text){
+function gen_FindTextElement(text, message="showGUI"){
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
     // ─── FIND TEXT ELEMENT ─────────────
@@ -157,31 +158,18 @@ function gen_FindTextElement(text){
     }
 
     if (FoundElement) {
-        // show_GUI('☑️ success: found ' + text + ' (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000)
+        message="showGUI" ? show_GUI('☑️ success: found "' + text + '" (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
         log('☑️ success: found "' + text + '" (gen_FindTextElement)')
         log('☑️ FoundElement: ' + FoundElement + ' (gen_FindTextElement)')
         return FoundElement
     } 
     
     else if (!FoundElement) {
-        // show_GUI('❌ error: not found ' + text + ' (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000)
-        log('❌ error: not found ' + text + ' (gen_FindTextElement)')
+        message="showGUI" ? show_GUI('❌ error: not found "' + text + '" (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
+        log('❌ error: not found "' + text + '" (gen_FindTextElement)')
         return false
     }
 }
 
-// function test(callback){
-//     callback()
-// }
-
-// function hello(){
-//     alert("hello there")
-// }
-
-// let catcher = hello() // you mean catcher will become undefined here?
-
-// what happens if no text node found in FindElementTextNode?
-// this if above does not have explicit else statement that return something.
-// if FindElementTextNode
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
