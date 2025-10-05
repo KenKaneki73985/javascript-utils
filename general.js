@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 03, 5:54 PM 2025
+// October 05, 11:04 AM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -108,6 +108,25 @@ async function gen_WaitTextToExist(text, message="hide"){
         }
 
         log('⏳ waiting for "' + text + '" (gen_WaitTextToExist)')
+        await sleep(100)
+    }
+}
+
+async function gen_WaitElementToExist(ElementID, message="hide"){
+
+    while (true) {
+
+        let Element = document.querySelector(ElementID)
+
+        if (Element){
+
+            message == "showGUI" ? show_GUI('☑️ success: found ' + Element + ' (gen_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            
+            log('☑️ success: found "' + Element + '" (gen_WaitElementToExist)')
+            break
+        }
+
+        log('⏳ waiting for "' + Element + '" (gen_WaitElementToExist)')
         await sleep(100)
     }
 }
