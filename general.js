@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 05, 4:02 PM 2025
+// October 05, 4:27 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -132,10 +132,9 @@ async function gen_WaitElementToExist(ElementID, message="hide"){
     }
 }
 
-// ─── example for gen_FindTextElement() ─────────────
 // let FoundElement = gen_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
-function gen_FindTextElement(text, message="showGUI"){
+function gen_FindTextElement(text, message="hide"){
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
     // ─── FIND TEXT ELEMENT ─────────────
