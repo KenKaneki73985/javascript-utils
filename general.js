@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 05, 3:59 PM 2025
+// October 05, 4:02 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -158,14 +158,14 @@ function gen_FindTextElement(text, message="showGUI"){
     }
 
     if (FoundElement) {
-        message="showGUI" ? show_GUI('☑️ success: found "' + text + '" (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+        message == "showGUI" ? show_GUI('☑️ success: found "' + text + '" (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
         log('☑️ success: found "' + text + '" (gen_FindTextElement)')
         log('☑️ FoundElement: ' + FoundElement + ' (gen_FindTextElement)')
         return FoundElement
     } 
     
     else if (!FoundElement) {
-        message="showGUI" ? show_GUI('❌ error: not found "' + text + '" (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
+        message == "showGUI" ? show_GUI('❌ error: not found "' + text + '" (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
         log('❌ error: not found "' + text + '" (gen_FindTextElement)')
         return false
     }
