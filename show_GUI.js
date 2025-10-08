@@ -1,6 +1,6 @@
- // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 01, 4:18 PM 2025
+    // October 08, 3:42 PM 2025
     function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
@@ -30,16 +30,24 @@
             // Create message element
             const messageElement = document.createElement('div');
             messageElement.innerText = text;
-            messageElement.style.position = 'fixed';
-            messageElement.style.zIndex = '9999';
-            messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left
-            messageElement.style.borderRadius = '4px';
-            messageElement.style.color = 'white';
-            messageElement.style.fontFamily = "Consolas";
-            messageElement.style.fontSize = `${fontSize}px`;
+            messageElement.style.position = 'fixed'
+            messageElement.style.zIndex = '9999'
+
+            // ─── padding ─────────────
+            // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - march 2025 
+            // messageElement.style.padding = '10px 10px 10px 10px'; // top right bot left - October 08, 3:31 PM 2025 
+            messageElement.style.paddingTop    = "7px"
+            messageElement.style.paddingBottom = "7px"
+            messageElement.style.paddingLeft   = "10px"
+            messageElement.style.paddingRight  = "10px"
+
+            messageElement.style.borderRadius = '4px'
+            messageElement.style.color = 'white'
+            messageElement.style.fontFamily = "Consolas"
+            messageElement.style.fontSize = `${fontSize}px`
             messageElement.style.backgroundColor = bgColor;
-            messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
-            messageElement.style.transition = 'opacity 1s ease-in-out';
+            messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)'
+            messageElement.style.transition = 'opacity 1s ease-in-out'
             messageElement.style.opacity = '1'; // Start fully visible
             // messageElement.style.opacity = '.8'; // Start fully visible
             
