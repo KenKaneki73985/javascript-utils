@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 06, 3:46 PM 2025
+// October 08, 3:26 PM 2025
 let STAY_LOOP = true
 let HAS_EXECUTED = false
 let ORIGINAL_TITLE = false
@@ -40,7 +40,7 @@ function log(text) {
 }
 
 // ▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
-function gen_SVG_MAKER(pos, top, left, callback, svg_string){
+function gen_ADD_SVG(pos, top, left, callback, svg_string){
     let SVG_BTN = document.createElement('button')
     SVG_BTN.innerHTML = svg_string
     SVG_BTN.style.border = "none"
