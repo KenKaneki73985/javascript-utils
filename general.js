@@ -171,7 +171,7 @@ function FindTextElement(text, message="hide"){
 }
 
 function test_hello(){
-    show_GUI('hello test', "GUI_v1", "blue", 0, "y80", 17, 3000)
+    show_GUI('hello test 123', "GUI_v1", "blue", 0, "y80", 17, 3000)
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
