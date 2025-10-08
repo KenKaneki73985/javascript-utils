@@ -1,12 +1,6 @@
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // October 08, 3:42 PM 2025
-    function SHOW_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
-        // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
-        message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
-        // log(text)
-    }
-
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// October 08, 3:46 PM 2025
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
@@ -35,7 +29,6 @@
 
             // ─── padding ─────────────
             // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - march 2025 
-            // messageElement.style.padding = '10px 10px 10px 10px'; // top right bot left - October 08, 3:31 PM 2025 
             messageElement.style.paddingTop    = "7px"
             messageElement.style.paddingBottom = "7px"
             messageElement.style.paddingLeft   = "10px"
