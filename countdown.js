@@ -1,9 +1,9 @@
-    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (countdown ms) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// August 13, 5:39 PM 2025
+    // refresh_ID = "idddCVN6U2JS" 
 
     // Global variables for countdown
-    let countdownTimer = null; 
+    let countdownTimer = null;
     let countdownStartTime = 0;
 
     function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
@@ -37,7 +37,7 @@
             
             // pinVSCODE
             // Show the countdown message
-            SHOW_GUI(displayText, "countdown_GUI", "black", 0, "y75", 17, 100)
+            SHOW_GUI(displayText, "countdown_GUI", "black", -0.1, "y75", 17, 100)
         }
         
         // Start the timer to update every 100ms for smoother countdown
