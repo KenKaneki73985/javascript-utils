@@ -1,8 +1,8 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // refresh_ID = "iddd" 
+    // refresh_ID = "idddCVN6S16Q" 
     
-    function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){ 
+    function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
         // log(text)
