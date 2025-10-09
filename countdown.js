@@ -3,7 +3,7 @@
 // August 13, 5:39 PM 2025
 
     // Global variables for countdown
-    let countdownTimer = null;
+    let countdownTimer = null; 
     let countdownStartTime = 0;
 
     function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
