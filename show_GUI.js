@@ -1,6 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// October 08, 3:46 PM 2025
+    // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+    // refresh_ID = "iddd" 
+    
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
         message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
@@ -28,7 +29,8 @@
             messageElement.style.zIndex = '9999'
 
             // ─── padding ─────────────
-            // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - march 2025 
+            // NOTES: padding top/bot in claude.ai is streched out
+            // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - May 2025 
             messageElement.style.paddingTop    = "7px"
             messageElement.style.paddingBottom = "7px"
             messageElement.style.paddingLeft   = "10px"
@@ -140,6 +142,5 @@
 
     // Make it available globally
     window.message = message;
-
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
