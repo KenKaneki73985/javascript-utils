@@ -1,11 +1,15 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (countdown ms) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // reload_ID = "idddCW3PUA85" 
-    // reload_TIME = October 10, 6:18 PM 2025
+    // reload_ID = "idddCW3Q38YN" 
+    // reload_TIME = October 10, 6:22 PM 2025
 
     // Global variables for countdown
     let countdownTimer = null;
     let countdownStartTime = 0;
+
+    function test_countdown(){
+        alert("test counddown October 10, 6:22 PM 2025")
+    }
 
     function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
         // Clear existing timer if running
