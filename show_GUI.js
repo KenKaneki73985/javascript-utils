@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (show GUI) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // reload_ID = "idddCW3QCL5I"
-    // reload_TIME = October 10, 8:26 PM 2025
+    // reload_ID = "idddCW3QT6U0"
+    // reload_TIME = October 10, 10:34 PM 2025
     
     function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
         // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
@@ -32,10 +32,10 @@
             // ─── padding ─────────────
             // NOTES: padding top/bot in claude.ai is streched out
             // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - May 2025 
-            messageElement.style.paddingTop    = "7px"
-            messageElement.style.paddingBottom = "7px"
-            messageElement.style.paddingLeft   = "10px"
-            messageElement.style.paddingRight  = "10px"
+            messageElement.style.paddingTop    = "9px"
+            messageElement.style.paddingBottom = "9px"
+            messageElement.style.paddingLeft   = "12px"
+            messageElement.style.paddingRight  = "12px"
 
             messageElement.style.borderRadius = '4px'
             messageElement.style.color = 'white'
