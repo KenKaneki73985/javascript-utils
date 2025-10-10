@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (countdown ms) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // reload_ID = "idddCW3Q38YN" 
-    // reload_TIME = October 10, 6:22 PM 2025
+    // reload_ID = "idddCW3P4GTT" 
+    // reload_TIME = October 10, 8:06 PM 2025
 
     // Global variables for countdown
     let countdownTimer = null;
