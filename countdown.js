@@ -1,11 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
     // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (countdown ms) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-    // reload_ID = "idddCVN60G9Y" 
-    // reload_TIME = October 09, 4:10 PM 2025
-
-    function test_countdown(){
-        alert("test coundown October 10, 5:30 PM 2025")
-    }
+    // reload_ID = "idddCW3PUA85" 
+    // reload_TIME = October 10, 6:18 PM 2025
 
     // Global variables for countdown
     let countdownTimer = null;
@@ -42,7 +38,7 @@
             
             // pinVSCODE
             // Show the countdown message
-            SHOW_GUI(displayText, "countdown_GUI", "black", -0.1, "y75", 17, 100)
+            show_GUI(displayText, "countdown_GUI", "black", -0.1, "y75", 17, 100)
         }
         
         // Start the timer to update every 100ms for smoother countdown
