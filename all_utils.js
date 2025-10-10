@@ -1,6 +1,6 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all_utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3RDW9X"
+// reload_ID = "idddCW3RE7SF"
 // reload_TIME = October 10, 7:44 PM 2025
 
 function all_utils_test(){
@@ -27,7 +27,7 @@ Promise.all([
 .catch(PromiseError)
 
 function PromiseSuccess(){
-    show_GUI('☑️ success: all utils imported', "GUI_v1", "blue", 0, "y80", 17, 3000)
+    // show_GUI('☑️ success: all utils imported', "GUI_v1", "blue", 0, "y80", 17, 3000)
     log('☑️ success: all utils imported')
 }
 function PromiseError(error){
