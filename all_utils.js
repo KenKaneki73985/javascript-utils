@@ -1,15 +1,15 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3QCAHE"
-// reload_TIME = October 10, 11:26 PM 2025
+// reload_ID = "idddCW3QECCO"
+// reload_TIME = October 10, 11:27 PM 2025
+
+// let AllScriptsLoaded = false
 
 document.readyState === 'complete' ? PAGE_READY_ACTIONS() : addEventListener('load', PAGE_READY_ACTIONS)
 
 function PAGE_READY_ACTIONS(){
     LOAD_UTILS()
 }
-
-// let AllScriptsLoaded = false
 
 function LOAD_UTILS(){
     
