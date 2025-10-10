@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all_utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3R5H61"
-// reload_TIME = October 10, 7:40 PM 2025
+// reload_ID = "idddCW3RABCV"
+// reload_TIME = October 10, 7:42 PM 2025
 
 function all_utils_test(){
   alert("all utils October 10, 7:06 PM 2025")
@@ -37,15 +37,16 @@ Promise.all([
     loadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js'),
     loadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js')
 ])
-.then(() => {
-    // alert("✔️ success import (utils all)")
-    show_GUI('✔️ success import (utils all)', "GUI_v1", "blue", 0, "y80", 17, 3000)
-})
-.catch(promise_error);
+.then(promise_success)
+.catch(promise_error)
 
+function promise_success(){
+    show_GUI('☑️ success: all utils imported', "GUI_v1", "blue", 0, "y80", 17, 3000)
+    log('☑️ success: all utils imported')
+}
 function promise_error(error){
-    alert("error: script loading failed")
-    console.error('error: script loading failed:' + error)
+    alert("❌ error: script loading failed")
+    console.error('❌ error: script loading failed:' + error)
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
