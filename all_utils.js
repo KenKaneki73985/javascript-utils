@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3PYXKG"
-// reload_TIME = October 10, 10:20 PM 2025
+// reload_ID = "idddCW3Q11A5"
+// reload_TIME = October 10, 10:21 PM 2025
 
 document.readyState === 'complete' ? PAGE_READY_ACTIONS() : addEventListener('load', PAGE_READY_ACTIONS)
 
@@ -10,7 +10,8 @@ function PAGE_READY_ACTIONS(){
 }
 
 function LOAD_UTILS(){
-    const GithubScripts = [
+    
+    let GithubScripts = [
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js',
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js',
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js'
@@ -102,8 +103,6 @@ function all_utils_test(){
 //     console.log('☑️ done import utils')
 //     // UtilsLoaded = true
 // }
-
-
 
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
