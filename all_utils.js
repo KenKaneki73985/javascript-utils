@@ -1,6 +1,8 @@
 function all_utils_test(){
-  alert("im all utils // October 10, 6:15 PM 2025")
+  alert("im all utils // October 10, 6:30 PM 2025")
 }
+
+all_utils_test()
 
 // const scripts = [
 //     'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js',
