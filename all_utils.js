@@ -1,5 +1,5 @@
 function all_utils_test(){
-  alert("im all utils // October 10, 6:07 PM 2025")
+  alert("im all utils // October 10, 6:15 PM 2025")
 }
 
 // const scripts = [
@@ -31,12 +31,11 @@ Promise.all([
     loadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js')
 ])
 .then(() => {
-    // show_GUI('✔️ done import', "GUI_v1", "blue", 0, "y80", 17, 3000);
-    alert("✔️ done import")
+    alert("✔️ success import (utils all)")
 })
 .catch(promise_error);
 
 function promise_error(error){
-    alert("'Script loading failed")
-    console.error('Script loading failed:', error)
+    alert("error: script loading failed")
+    console.error('error: script loading failed:' + error)
 }
