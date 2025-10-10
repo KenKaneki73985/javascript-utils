@@ -1,13 +1,15 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3Q11A5"
-// reload_TIME = October 10, 10:21 PM 2025
+// reload_ID = "idddCW3PWFT4"
+// reload_TIME = October 10, 11:19 PM 2025
 
 document.readyState === 'complete' ? PAGE_READY_ACTIONS() : addEventListener('load', PAGE_READY_ACTIONS)
 
 function PAGE_READY_ACTIONS(){
     LOAD_UTILS()
 }
+
+let AllScriptsLoaded = false
 
 function LOAD_UTILS(){
     
@@ -18,6 +20,8 @@ function LOAD_UTILS(){
     ]
 
     GithubScripts.forEach(LoadGithubScripts)
+
+    AllScriptsLoaded = true
 
     function LoadGithubScripts(GithubScript){
         let ScriptElement = document.createElement('script')
