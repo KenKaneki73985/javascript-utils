@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3QECCO"
-// reload_TIME = October 10, 11:27 PM 2025
+// reload_ID = "idddCW3QSWGB"
+// reload_TIME = October 10, 11:34 PM 2025
 
 // let AllScriptsLoaded = false
 
@@ -19,11 +19,11 @@ function LOAD_UTILS(){
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js'
     ]
 
-    GithubScripts.forEach(LoadGithubScripts)
+    GithubScripts.forEach(LoadGithubScript)
 
     // AllScriptsLoaded = true
 
-    function LoadGithubScripts(GithubScript){
+    function LoadGithubScript(GithubScript){
         let ScriptElement = document.createElement('script')
         ScriptElement.src = GithubScript
         document.head.appendChild(ScriptElement)
