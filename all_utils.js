@@ -1,5 +1,5 @@
 function all_utils_test(){
-  alert("im all utils // October 10, 6:30 PM 2025")
+  alert("im all utils October 10, 6:57 PM 2025")
 }
 
 all_utils_test()
@@ -33,7 +33,8 @@ Promise.all([
     loadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js')
 ])
 .then(() => {
-    alert("✔️ success import (utils all)")
+    // alert("✔️ success import (utils all)")
+    show_GUI('✔️ success import (utils all)', "GUI_v1", "blue", 0, "y80", 17, 3000)
 })
 .catch(promise_error);
 
