@@ -1,30 +1,32 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCW3QG9W5"
-// reload_TIME = October 10, 9:28 PM 2025
+// reload_ID = "idddCW3PYXKG"
+// reload_TIME = October 10, 10:20 PM 2025
 
-function all_utils_test(){
-  alert("all utils October 10, 8:55 PM 2025")
+document.readyState === 'complete' ? PAGE_READY_ACTIONS() : addEventListener('load', PAGE_READY_ACTIONS)
+
+function PAGE_READY_ACTIONS(){
+    LOAD_UTILS()
 }
 
-document.readyState === 'complete' ? UTILS_PAGE_READY_ACTIONS() : addEventListener('load', UTILS_PAGE_READY_ACTIONS)
-
-function UTILS_PAGE_READY_ACTIONS(){
-    LoadUtils()
-}
-
-function LoadUtils(){
-    const scripts = [
+function LOAD_UTILS(){
+    const GithubScripts = [
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js',
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js',
         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js'
     ]
 
-    scripts.forEach(src => {
-        const script = document.createElement('script');
-        script.src = src;
-        document.head.appendChild(script);
-    });
+    GithubScripts.forEach(LoadGithubScripts)
+
+    function LoadGithubScripts(GithubScript){
+        let ScriptElement = document.createElement('script')
+        ScriptElement.src = GithubScript
+        document.head.appendChild(ScriptElement)
+    }
+}
+
+function all_utils_test(){
+  alert("all utils October 10, 8:55 PM 2025")
 }
 
 // function LoadScript(src) {
@@ -37,7 +39,7 @@ function LoadUtils(){
 //     });
 // }
 
-// Load scripts sequentially
+// Load GithubScripts sequentially
 // Promise.all([
 //     LoadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js'),
 //     LoadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js'),
@@ -56,7 +58,7 @@ function LoadUtils(){
 // }
 
 
-// function LoadUtils(){
+// function LOAD_UTILS(){
 //     // function LoadScript(src) {
 //     //     return new Promise((resolve, reject) => {
 //     //         const script = document.createElement('script');
@@ -67,7 +69,7 @@ function LoadUtils(){
 //     //     });
 //     // }
 
-//     // // Load scripts sequentially
+//     // // Load GithubScripts sequentially
 //     // Promise.all([
 //     //     LoadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js'),
 //     //     LoadScript('https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js'),
@@ -85,13 +87,13 @@ function LoadUtils(){
 //     //     console.error('❌ error: script loading failed:' + error)
 //     // }
 
-//     const scripts = [
+//     const GithubScripts = [
 //         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/general.js',
 //         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/show_GUI.js',
 //         'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/countdown.js'
 //     ]
 
-//     scripts.forEach(src => {
+//     GithubScripts.forEach(src => {
 //         const script = document.createElement('script');
 //         script.src = src;
 //         document.head.appendChild(script);
