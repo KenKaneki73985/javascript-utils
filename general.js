@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCX0UUPTF"
-// reload_TIME = October 12, 7:56 PM 2025
+// reload_ID = "idddCX0T7DW7"
+// reload_TIME = October 12, 8:28 PM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -172,7 +172,7 @@ function FindTextElement(text, message="hide"){
     }
 }
 
-function test_hello(){
+function test_general(){
     show_GUI('hello test', "GUI_v1", "blue", 0, "y80", 17, 3000)
 }
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
