@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCX0UA4A4"
-// reload_TIME = October 12, 7:46 PM 2025
+// reload_ID = "idddCX0UUPTF"
+// reload_TIME = October 12, 7:56 PM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -42,25 +42,6 @@ function log(text) {
 }
 
 // ▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
-// function gen_ADD_SVG(pos, top, left, callback, svg_string){
-//     let SVG_BTN = document.createElement('button')
-//     SVG_BTN.innerHTML = svg_string
-//     SVG_BTN.style.border = "none"
-//     SVG_BTN.style.position = pos // 'fixed'
-
-//     SVG_BTN.style.top = top // '80%'
-//     SVG_BTN.style.left = left // '80%'
-//     SVG_BTN.style.padding = '0px'
-//     SVG_BTN.style.background = "none"
-//     SVG_BTN.style.zIndex = '9999'
-//     SVG_BTN.addEventListener('click', () => {
-//         callback()
-//     })
-    
-//     document.body.appendChild(SVG_BTN)
-// }
-
-// ─── VERSION 2 ─────────────
 function gen_ADD_SVG(callback, pos, top, left, svg_string){
     let SVG_BTN = document.createElement('button')
     SVG_BTN.innerHTML = svg_string
@@ -78,6 +59,7 @@ function gen_ADD_SVG(callback, pos, top, left, svg_string){
     
     document.body.appendChild(SVG_BTN)
 }
+
 // ▬▬▬ GET POSTS ▬▬▬▬▬▬▬▬▬▬▬▬▬
 function gen_GetTopChildrenDoAction(ContainerID, callback) {
     
