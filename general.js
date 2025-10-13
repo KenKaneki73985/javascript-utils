@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCX0T7DW7"
-// reload_TIME = October 12, 8:28 PM 2025
+// reload_ID = "idddCXHCGPDC"
+// reload_TIME = October 13, 12:26 PM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -103,13 +103,13 @@ async function WaitTextToExist(text, message="hide"){
 
         if (document.body.innerText.includes(text)){
 
-            message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (gen_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
-            log('☑️ success: found "' + text + '" (gen_WaitTextToExist)')
+            message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            log('☑️ success: found "' + text + '" (WaitTextToExist)')
             break
         }
 
-        message == "showGUI" ? show_GUI('⏳ waiting for "' + text + '" (gen_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
-        log('⏳ waiting for "' + text + '" (gen_WaitTextToExist)')
+        message == "showGUI" ? show_GUI('⏳ waiting for "' + text + '" (WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        log('⏳ waiting for "' + text + '" (WaitTextToExist)')
         await sleep(100)
     }
 }
@@ -122,14 +122,14 @@ async function WaitElementToExist(ElementID, message="hide"){
 
         if (Element){
 
-            message == "showGUI" ? show_GUI('☑️ success: found "' + Element + '" (gen_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            message == "showGUI" ? show_GUI('☑️ success: found "' + Element + '" (WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
-            log('☑️ success: found "' + Element + '" (gen_WaitElementToExist)')
+            log('☑️ success: found "' + Element + '" (WaitElementToExist)')
             break
         }
 
-        message == "showGUI" ? show_GUI('⏳ waiting for "' + Element + '" (gen_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
-        log('⏳ waiting for "' + Element + '" (gen_WaitElementToExist)')
+        message == "showGUI" ? show_GUI('⏳ waiting for "' + Element + '" (WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        log('⏳ waiting for "' + Element + '" (WaitElementToExist)')
         await sleep(100)
     }
 }
@@ -159,21 +159,18 @@ function FindTextElement(text, message="hide"){
     }
 
     if (FoundElement) {
-        message == "showGUI" ? show_GUI('☑️ success: found "' + text + '" (gen_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
-        log('☑️ success: found "' + text + '" (gen_FindTextElement)')
-        log('☑️ FoundElement: ' + FoundElement + ' (gen_FindTextElement)')
+        message == "showGUI" ? show_GUI('☑️ success: found "' + text + '" (FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+        log('☑️ success: found "' + text + '" (FindTextElement)')
+        log('☑️ FoundElement: ' + FoundElement + ' (FindTextElement)')
         return FoundElement
     } 
     
     else if (!FoundElement) {
-        message == "showGUI" ? show_GUI('❌ error: not found "' + text + '" (gen_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
-        log('❌ error: not found "' + text + '" (gen_FindTextElement)')
+        message == "showGUI" ? show_GUI('❌ error: not found "' + text + '" (FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
+        log('❌ error: not found "' + text + '" (FindTextElement)')
         return false
     }
 }
 
-function test_general(){
-    show_GUI('hello test', "GUI_v1", "blue", 0, "y80", 17, 3000)
-}
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
