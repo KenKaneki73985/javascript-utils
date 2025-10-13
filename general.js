@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCXHCGPDC"
-// reload_TIME = October 13, 12:26 PM 2025
+// reload_ID = "idddCXHB74RP"
+// reload_TIME = October 13, 3:05 PM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -103,7 +103,7 @@ async function WaitTextToExist(text, message="hide"){
 
         if (document.body.innerText.includes(text)){
 
-            message == "showGUI" ? show_GUI('☑️ success: found ' + text + ' (WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            // message == "showGUI" ? show_GUI('☑️ success: found  ' + text + ' (WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             log('☑️ success: found "' + text + '" (WaitTextToExist)')
             break
         }
