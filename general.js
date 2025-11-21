@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddEB3HAM9H"
-// reload_TIME = November 21, 11:33 PM 2025
+// reload_ID = "idddEBK0RLIK"
+// reload_TIME = November 22, 2:35 AM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -38,6 +38,10 @@ async function gen_SET_WINTITLE(signal, data = '', ms = 2000) {
 }
 
 function log(text) {
+    console.log(text)
+}
+
+function log_____(text) {
     console.log(text)
 }
 
