@@ -1,7 +1,8 @@
+// divider-start
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (general) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCXHBXN2A"
-// reload_TIME = October 13, 3:17 PM 2025
+// reload_ID 1G9OG
+// reload_TIME November 21, 11:24 PM 2025
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -42,6 +43,7 @@ function log(text) {
 }
 
 // ▬▬▬ SVG MAKER ▬▬▬▬▬▬▬▬▬▬▬▬▬
+// gen_ADD_SVG(OpenHistory,    "fixed", '2.7%',  '82.9%',  '<svg width="24px" height="24px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M5.81824 6.72729V14H13.091" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C16.598 4 10.1351 8.02111 6.67677 13.9981" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M24.005 12L24.0038 24.0088L32.4832 32.4882" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>')
 function gen_ADD_SVG(callback, pos, top, left, svg_string){
     let SVG_BTN = document.createElement('button')
     SVG_BTN.innerHTML = svg_string
@@ -98,6 +100,7 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
 // }
 
 async function WaitTextToExist(text, message="hide"){
+    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
@@ -115,6 +118,7 @@ async function WaitTextToExist(text, message="hide"){
 }
 
 async function WaitElementToExist(ElementID, message="hide"){
+    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
@@ -125,7 +129,8 @@ async function WaitElementToExist(ElementID, message="hide"){
             message == "showGUI" ? show_GUI('☑️ success: found "' + Element + '" (WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
             log('☑️ success: found "' + Element + '" (WaitElementToExist)')
-            break
+            return Element
+            // break
         }
 
         message == "showGUI" ? show_GUI('⏳ waiting for "' + Element + '" (WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
@@ -137,6 +142,8 @@ async function WaitElementToExist(ElementID, message="hide"){
 // let FoundElement = FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
 function FindTextElement(text, message="hide"){
+    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
+
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
     // ─── FIND TEXT ELEMENT ─────────────
@@ -174,3 +181,4 @@ function FindTextElement(text, message="hide"){
 
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ END OF GITHUB COPY/PASTE ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+// divider-end
