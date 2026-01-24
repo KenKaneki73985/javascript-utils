@@ -1,7 +1,7 @@
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START OF GITHUB COPY/PASTE (all utils) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-// reload_ID = "idddCWK8CJIZ"
-// reload_TIME = October 11, 1:03 AM 2025s
+// reload_ID = "iddd1L349CIH"
+// reload_TIME = January 24, 9:51 PM 2026
 
 let AllScriptsLoaded = false
 LOAD_UTILS()
@@ -24,6 +24,12 @@ function LOAD_UTILS(){
         document.head.appendChild(ScriptElement)
     }
 }
+
+// function LoadUtils(){
+//     let ScriptElement = document.createElement('script')
+//     ScriptElement.src = 'https://raw.githack.com/KenKaneki73985/javascript-utils/refs/heads/main/all_utils.js'
+//     document.head.appendChild(ScriptElement)
+// }
 
 // function LoadScript(src) {
 //     return new Promise((resolve, reject) => {
