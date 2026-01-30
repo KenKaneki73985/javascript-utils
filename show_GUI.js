@@ -1,29 +1,29 @@
 // ──────────────────────────────────────────────────────────────────────────────────
     // ────────────────────── START OF GITHUB COPY/PASTE (show GUI) ──────────────────────
-    // reload_ID = "iddd8YOB"
-    // reload_TIME = January 30, 10:04 PM 2026
+    // reload_ID = "idddOQRP"
+    // reload_TIME = January 30, 10:11 PM 2026
     
-    function show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time){
-        // message.show_GUI("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
-        message.show_GUI(text, GUI, color, extra_xpos, ypos, fontsize, time)
+    function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
+        // MyMessageInstance.message("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
+        MyMessageInstance.message(text, GUI, color, extra_xpos, ypos, fontsize, time)
         // log(text)
     }
 
     function hide_GUI(GUI){
-        show_GUI("hide GUI", GUI, "green", 0, "y180", 16, 100) // 180 = vertically hidden
+        message("hide GUI", GUI, "green", 0, "y180", 16, 100) // 180 = vertically hidden
     }
 
     class DYNAMIC_MESSAGE {
         constructor() {
-            this.messageElements = {}; // Store references to active message elements
+            this.messageElements = {}; // Store references to active MyMessageInstance elements
             this.fadeTimers = {}; // Store references to fade timers
         }
 
-        show_GUI(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
-            // Remove existing message with this category if it exists
+        message(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
+            // Remove existing MyMessageInstance with this category if it exists
             this.hideMessage(category);
             
-            // Create message element
+            // Create MyMessageInstance element
             const messageElement = document.createElement('div');
             messageElement.innerText = text;
             messageElement.style.position = 'fixed'
@@ -114,7 +114,7 @@
             return messageElement;
         }
         
-        // Hide/remove a specific message
+        // Hide/remove a specific MyMessageInstance
         hideMessage(category) {
             if (this.messageElements[category]) {
                 document.body.removeChild(this.messageElements[category]);
@@ -138,10 +138,10 @@
         }
     }
 
-    // Create a global instance of the message system
-    const message = new DYNAMIC_MESSAGE();
+    // Create a global instance of the MyMessageInstance system
+    const MyMessageInstance = new DYNAMIC_MESSAGE();
 
     // Make it available globally
-    window.message = message;
+    window.MyMessageInstance = MyMessageInstance;
     // ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
     // ──────────────────────────────────────────────────────────────────────
