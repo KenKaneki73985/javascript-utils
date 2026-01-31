@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd2RZT"
-// reload_TIME = February 01, 2:01 AM 2026
+// reload_ID = "iddd4CM0"
+// reload_TIME = February 01, 2:02 AM 2026
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -8,7 +8,7 @@ let ORIGINAL_TITLE = false
 
 let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
-function gen_STOP_LOOP() {
+function sys_StayLoopOffOn() {
     message("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
     STAY_LOOP = false
 
