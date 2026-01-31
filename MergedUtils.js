@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd7DR9"
-// reload_TIME = February 01, 2:03 AM 2026
+// reload_ID = "iddd8KW8"
+// reload_TIME = February 01, 2:04 AM 2026
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -141,17 +141,17 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
     }
 }
 
-// let FoundElement = FindTextElement("Songs")
+// let FoundElement = sys_FindTextElement("Songs")
 // FoundElement.style.border = "3px solid yellow"
-function FindTextElement(text, message="hide"){
+function sys_FindTextElement(text, message="hide"){
     // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
     // â”€â”€â”€ FIND TEXT ELEMENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    let FoundElement = AllElements_arr.find(FindTextElement)
+    let FoundElement = AllElements_arr.find(sys_FindTextElement)
 
-    function FindTextElement(element){
+    function sys_FindTextElement(element){
 
         let ElementChildNodes_arr = Array.from(element.childNodes)
         
@@ -168,15 +168,15 @@ function FindTextElement(text, message="hide"){
     }
 
     if (FoundElement) {
-        message == "showGUI" ? message('â˜‘ï¸ success: found "' + text + '" (FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
-        log('â˜‘ï¸ success: found "' + text + '" (FindTextElement)')
-        log('â˜‘ï¸ FoundElement: ' + FoundElement + ' (FindTextElement)')
+        message == "showGUI" ? message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+        log('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
+        log('â˜‘ï¸ FoundElement: ' + FoundElement + ' (sys_FindTextElement)')
         return FoundElement
     } 
     
     else if (!FoundElement) {
-        message == "showGUI" ? message('âŒ error: not found "' + text + '" (FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
-        log('âŒ error: not found "' + text + '" (FindTextElement)')
+        message == "showGUI" ? message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
+        log('âŒ error: not found "' + text + '" (sys_FindTextElement)')
         return false
     }
 }
