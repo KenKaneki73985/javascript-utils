@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd53IC"
-// reload_TIME = February 01, 3:02 AM 2026
+// reload_ID = "iddd9EEQ"
+// reload_TIME = February 01, 3:04 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -15,7 +15,7 @@ function log____(text) {
     console.log(text)
 }
 
-function console(text){
+function ConsoleLog(text){
     console.log(text)
 }
 
