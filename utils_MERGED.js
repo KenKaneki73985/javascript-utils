@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd3CLGY"
-// reload_TIME = February 01, 4:56 AM 2026
+// reload_ID = "iddd3H1GI"
+// reload_TIME = February 01, 4:58 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -151,14 +151,14 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
 }
 
 // use case:
-// let TargetElement = sys_FindTextElement("Songs")
-// TargetElement.click()
+// let ElementOfText = sys_FindElementOfText("Songs")
+// ElementOfText.click()
 
-function sys_FindTextElement(text, message="hide"){
+function sys_FindElementOfText(text, message="hide"){
     // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
-    let TargetElement   = AllElements_arr.find(FindTextElement)
+    let ElementOfText   = AllElements_arr.find(FindTextElement)
 
     function FindTextElement(CurrentElement){
 
@@ -176,22 +176,22 @@ function sys_FindTextElement(text, message="hide"){
         }
     }
 
-    if (TargetElement) {
+    if (ElementOfText) {
 
         if (message == "showGUI")  
-            message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+            message('â˜‘ï¸ success: found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
-        ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
-        ConsoleLog('â˜‘ï¸ TargetElement: ' + TargetElement + ' (sys_FindTextElement)')
-        return TargetElement
+        ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_FindElementOfText)')
+        ConsoleLog('â˜‘ï¸ ElementOfText: ' + ElementOfText + ' (sys_FindElementOfText)')
+        return ElementOfText
     } 
     
-    else if (!TargetElement) {
+    else if (!ElementOfText) {
 
         if (message == "showGUI") 
-            message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) 
+            message('âŒ error: not found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "red", 0, "y80", 17, 3000) 
 
-        ConsoleLog('âŒ error: not found "' + text + '" (sys_FindTextElement)')
+        ConsoleLog('âŒ error: not found "' + text + '" (sys_FindElementOfText)')
         return false
     }
 }
