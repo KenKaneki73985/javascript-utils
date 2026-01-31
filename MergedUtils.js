@@ -1,5 +1,5 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd73MO"
+// reload_ID = "iddd7DR9"
 // reload_TIME = February 01, 2:03 AM 2026
 
 let STAY_LOOP = true
@@ -119,7 +119,7 @@ async function sys_WaitTextToExist(text, message="hide"){
     }
 }
 
-async function WaitElementToExist(ElementID, message="hide"){
+async function sys_WaitElementToExist(ElementID, message="hide"){
     // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
@@ -128,15 +128,15 @@ async function WaitElementToExist(ElementID, message="hide"){
 
         if (Element){
 
-            message == "showGUI" ? message('â˜‘ï¸ success: found "' + Element + '" (WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            message == "showGUI" ? message('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
             
-            log('â˜‘ï¸ success: found "' + Element + '" (WaitElementToExist)')
+            log('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
             return Element
             // break
         }
 
-        message == "showGUI" ? message('â³ waiting for "' + Element + '" (WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
-        log('â³ waiting for "' + Element + '" (WaitElementToExist)')
+        message == "showGUI" ? message('â³ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        log('â³ waiting for "' + Element + '" (sys_WaitElementToExist)')
         await sleep(100)
     }
 }
