@@ -1,5 +1,5 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd8KW8"
+// reload_ID = "iddd9D18"
 // reload_TIME = February 01, 2:04 AM 2026
 
 let STAY_LOOP = true
@@ -357,11 +357,7 @@ window.MyMessageInstance = MyMessageInstance;
 let countdownTimer = null;
 let countdownStartTime = 0;
 
-function test_countdown(){
-    alert("test counddown October 10, 6:22 PM 2025")
-}
-
-function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
+function countdown_ms(count, category, bgColor, xOffset, yPos, fontSize) {
     // Clear existing timer if running
     if (countdownTimer) {
         clearInterval(countdownTimer);
