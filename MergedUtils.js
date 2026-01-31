@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd15PML"
-// reload_TIME = February 01, 3:19 AM 2026
+// reload_ID = "iddd1CCU5"
+// reload_TIME = February 01, 3:22 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -68,7 +68,7 @@ function sys_AddSVG(callback, pos, top, left, svg_string){
 }
 
 // â”€â”€â”€ GET POSTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-function gen_GetTopChildrenDoAction(ContainerID, callback) {
+function sys_GetTopChildrenDoAction(ContainerID, callback) {
     
     let PostsContainer = document.querySelector(ContainerID)
 
@@ -88,7 +88,7 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
     
     else {
         // message("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
-        ConsoleLog("âŒ error: PostsContainer not found (gen_GetTopChildrenDoAction)")
+        ConsoleLog("âŒ error: PostsContainer not found (sys_GetTopChildrenDoAction)")
     }
 }
 
@@ -151,17 +151,19 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
     }
 }
 
+// use case:
 // let FoundElement = sys_FindTextElement("Songs")
-// FoundElement.style.border = "3px solid yellow"
+// FoundElement.click()
+
 function sys_FindTextElement(text, message="hide"){
-    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
+    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
 
     // â”€â”€â”€ FIND TEXT ELEMENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    let FoundElement = AllElements_arr.find(sys_FindTextElement)
+    let FoundElement = AllElements_arr.find(FindTextElement)
 
-    function sys_FindTextElement(element){
+    function FindTextElement(element){
 
         let ElementChildNodes_arr = Array.from(element.childNodes)
         
