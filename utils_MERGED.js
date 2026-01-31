@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd2MI08"
-// reload_TIME = February 01, 4:44 AM 2026
+// reload_ID = "iddd2VA7W"
+// reload_TIME = February 01, 4:48 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -168,6 +168,7 @@ function sys_FindTextElement(text, message="hide"){
             return true
 
         function FindElementTextNode(ChildNode) {
+            // if the current element child node is a text node, and that text node is 'text' (eg. Songs), return true
             if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text)
                 return true
         }
