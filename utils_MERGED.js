@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd3H1GI"
-// reload_TIME = February 01, 4:58 AM 2026
+// reload_ID = "iddd159O"
+// reload_TIME = February 01, 5:00 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -158,9 +158,9 @@ function sys_FindElementOfText(text, message="hide"){
     // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
-    let ElementOfText   = AllElements_arr.find(FindTextElement)
+    let ElementOfText   = AllElements_arr.find(FindElementOfText)
 
-    function FindTextElement(CurrentElement){
+    function FindElementOfText(CurrentElement){
 
         let CurrentElementChildNodes_arr = Array.from(CurrentElement.childNodes)
         
