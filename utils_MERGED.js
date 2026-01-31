@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1XF25"
-// reload_TIME = February 01, 4:32 AM 2026
+// reload_ID = "iddd2IFHH"
+// reload_TIME = February 01, 4:42 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -140,7 +140,6 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
             
             ConsoleLog('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
             return Element
-            // break
         }
 
         if (message == "showGUI")  
@@ -200,17 +199,16 @@ function sys_FindTextElement(text, message="hide"){
 function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
     // MyMessageInstance.message("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
     MyMessageInstance.message(text, GUI, color, extra_xpos, ypos, fontsize, time)
-    // log(text)
 }
 
 function HideMessage(GUI){
-    message("hide GUI", GUI, "green", 0, "y180", 16, 100) // 180 = vertically hidden
+    message("hide GUI", GUI, "green", 0, "y200", 16, 100) // y200 = vertically hidden
 }
 
 class DYNAMIC_MESSAGE {
     constructor() {
         this.messageElements = {}; // Store references to active MyMessageInstance elements
-        this.fadeTimers = {}; // Store references to fade timers
+        this.fadeTimers      = {}; // Store references to fade timers
     }
 
     message(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
@@ -337,8 +335,6 @@ const MyMessageInstance = new DYNAMIC_MESSAGE();
 
 // Make it available globally
 window.MyMessageInstance = MyMessageInstance;
-
-// divider-end
 
 // â”€â”€â”€ SIZE 17 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // message("w", "GUI_v1", "blue", 0, 75, 17, 3600000)
