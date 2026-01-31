@@ -1,12 +1,11 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "idddZEFC"
-// reload_TIME = February 01, 2:16 AM 2026
+// reload_ID = "iddd13OTI"
+// reload_TIME = February 01, 2:18 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
 let OriginalTitle = false
-
-let sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
+let sleep         = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
 function sys_StayLoopOffOn() {
     message("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
@@ -21,7 +20,6 @@ function sys_StayLoopOffOn() {
 function sys_GetOriginalTitle(){
     if (HasExecuted) return
     OriginalTitle = document.title
-    // setTimeout(() => { HasExecuted = false }, 36000000) 
     HasExecuted = true // don't get title ever again
 }    
 
@@ -33,6 +31,7 @@ async function sys_SetWintitle(signal, data = '', ms = 2000) {
     log("success: wintitle set: " + signal)
 
     await sleep(ms) // 2 seconds
+
     document.title = OriginalTitle
 }
 
@@ -40,7 +39,7 @@ function log(text) {
     console.log(text)
 }
 
-function log_____(text) {
+function log____(text) {
     console.log(text)
 }
 
