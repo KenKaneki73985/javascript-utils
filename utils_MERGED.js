@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd36UEZ"
-// reload_TIME = February 01, 4:53 AM 2026
+// reload_ID = "iddd3CLGY"
+// reload_TIME = February 01, 4:56 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -164,12 +164,12 @@ function sys_FindTextElement(text, message="hide"){
 
         let CurrentElementChildNodes_arr = Array.from(CurrentElement.childNodes)
         
-        if (CurrentElementChildNodes_arr.some(FoundCurrentElementTextNode))
+        if (CurrentElementChildNodes_arr.some(FoundTextNodeFromCurrentElement))
             return true
 
-        function FoundCurrentElementTextNode(ChildNode) {
-            // if current element child node is a text node, 
-            // and that text node is the value of 'text' variable (eg. Songs), 
+        function FoundTextNodeFromCurrentElement(ChildNode) {
+            // if current element child node is a text node...
+            // and that text node is the 'text' variable (eg. Songs)...
             // return that element (return true)
             if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text)
                 return true
