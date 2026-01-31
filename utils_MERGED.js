@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1MKNW"
-// reload_TIME = February 01, 3:27 AM 2026
+// reload_ID = "iddd2TT35"
+// reload_TIME = February 01, 3:47 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -127,7 +127,7 @@ async function sys_WaitTextToExist(text, message="hide"){
 }
 
 async function sys_WaitElementToExist(ElementID, message="hide"){
-    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
+    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
