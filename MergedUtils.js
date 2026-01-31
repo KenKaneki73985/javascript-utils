@@ -1,7 +1,6 @@
-// --- utils GENERAL -------------
 // ────────────────────── utils GENERAL ──────────────────────
-// reload_ID = "iddd1JTH5"
-// reload_TIME = February 01, 1:26 AM 2026
+// reload_ID = "iddd1QCJT"
+// reload_TIME = February 01, 1:29 AM 2026
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -183,7 +182,6 @@ function FindTextElement(text, message="hide"){
 }
 
 
-// --- utils MESSAGE -------------
 // ────────────────────── utils MESSAGE ──────────────────────
 
 function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
@@ -353,7 +351,6 @@ window.MyMessageInstance = MyMessageInstance;
 // message("second where did I go ?|| ... s15", "GUI_v5", "blue", 0, "y80", 15, 3600000)
 // message("third some sort of window  s15", "GUI_v6", "blue", 0, "y85", 15, 3600000)
 
-// --- utils COUNTDOWN -------------
 // ────────────────────── utils COUNTDOWN ──────────────────────
 
 // Global variables for countdown
