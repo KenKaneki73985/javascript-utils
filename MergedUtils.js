@@ -1,11 +1,19 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1MPU3"
-// reload_TIME = February 01, 2:27 AM 2026
+// reload_ID = "iddd2MMPX"
+// reload_TIME = February 01, 2:44 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
 let OriginalTitle = false
 let sleep         = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
+
+function log(text) {
+    console.log(text)
+}
+
+function log____(text) {
+    console.log(text)
+}
 
 function sys_StayLoopOffOn() {
     message("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
@@ -33,14 +41,6 @@ async function sys_SetWintitle(signal, data = '', ms = 2000) {
     await sleep(ms) // 2 seconds
 
     document.title = OriginalTitle
-}
-
-function log(text) {
-    console.log(text)
-}
-
-function log____(text) {
-    console.log(text)
 }
 
 // â”€â”€â”€ SVG MAKER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -101,18 +101,22 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
 // }
 
 async function sys_WaitTextToExist(text, message="hide"){
-    // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
+    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
         if (document.body.innerText.includes(text)){
 
-            message == "showGUI" ? message('â˜‘ï¸ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            if (message == "showGUI") 
+                message('â˜‘ï¸ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+
             log('â˜‘ï¸ success: found "' + text + '" (sys_WaitTextToExist)')
             break
         }
 
-        message == "showGUI" ? message('â³ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        if (message == "showGUI")  
+            message('â³ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
+
         log('â³ waiting for "' + text + '" (sys_WaitTextToExist)')
         await sleep(100)
     }
@@ -127,14 +131,17 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
 
         if (Element){
 
-            message == "showGUI" ? message('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            if (message == "showGUI") 
+                message('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
             
             log('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
             return Element
             // break
         }
 
-        message == "showGUI" ? message('â³ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        if (message == "showGUI")  
+            message('â³ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
+
         log('â³ waiting for "' + Element + '" (sys_WaitElementToExist)')
         await sleep(100)
     }
@@ -167,14 +174,20 @@ function sys_FindTextElement(text, message="hide"){
     }
 
     if (FoundElement) {
-        message == "showGUI" ? message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+        
+        if (message == "showGUI")  
+            message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+
         log('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
         log('â˜‘ï¸ FoundElement: ' + FoundElement + ' (sys_FindTextElement)')
         return FoundElement
     } 
     
     else if (!FoundElement) {
-        message == "showGUI" ? message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) : ''
+
+        if (message == "showGUI") 
+            message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) 
+
         log('âŒ error: not found "' + text + '" (sys_FindTextElement)')
         return false
     }
