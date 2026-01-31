@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1K47V"
-// reload_TIME = February 01, 2:26 AM 2026
+// reload_ID = "iddd1MPU3"
+// reload_TIME = February 01, 2:27 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -189,7 +189,7 @@ function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
     // log(text)
 }
 
-function hide_GUI(GUI){
+function HideMessage(GUI){
     message("hide GUI", GUI, "green", 0, "y180", 16, 100) // 180 = vertically hidden
 }
 
