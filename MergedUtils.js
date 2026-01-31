@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1CCU5"
-// reload_TIME = February 01, 3:22 AM 2026
+// reload_ID = "iddd1MKNW"
+// reload_TIME = February 01, 3:27 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -152,44 +152,39 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
 }
 
 // use case:
-// let FoundElement = sys_FindTextElement("Songs")
-// FoundElement.click()
+// let TargetElement = sys_FindTextElement("Songs")
+// TargetElement.click()
 
 function sys_FindTextElement(text, message="hide"){
     // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
-
-    // â”€â”€â”€ FIND TEXT ELEMENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    let FoundElement = AllElements_arr.find(FindTextElement)
+    let TargetElement   = AllElements_arr.find(FindTextElement)
 
     function FindTextElement(element){
 
         let ElementChildNodes_arr = Array.from(element.childNodes)
         
-        if (ElementChildNodes_arr.some(FindElementTextNode)){
+        if (ElementChildNodes_arr.some(FindElementTextNode))
             return true
-        }
 
-        // â”€â”€â”€ FUNCTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         function FindElementTextNode(ChildNode) {
-            if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text){
+            if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text)
                 return true
-            }
         }
     }
 
-    if (FoundElement) {
+    if (TargetElement) {
 
         if (message == "showGUI")  
             message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
         ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
-        ConsoleLog('â˜‘ï¸ FoundElement: ' + FoundElement + ' (sys_FindTextElement)')
-        return FoundElement
+        ConsoleLog('â˜‘ï¸ TargetElement: ' + TargetElement + ' (sys_FindTextElement)')
+        return TargetElement
     } 
     
-    else if (!FoundElement) {
+    else if (!TargetElement) {
 
         if (message == "showGUI") 
             message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) 
