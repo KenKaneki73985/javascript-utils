@@ -1,9 +1,7 @@
 // --- utils GENERAL -------------
-// divider-start (for github)
-// ──────────────────────────────────────────────────────────────────────────────────
-// ────────────────────── START OF GITHUB COPY/PASTE (general) ──────────────────────
-// reload_ID = "iddd1BUHZ"
-// reload_TIME = February 01, 1:22 AM 2026
+// ────────────────────── utils GENERAL ──────────────────────
+// reload_ID = "iddd1JTH5"
+// reload_TIME = February 01, 1:26 AM 2026
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -184,14 +182,9 @@ function FindTextElement(text, message="hide"){
     }
 }
 
-// ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
-// ──────────────────────────────────────────────────────────────────────
-// divider-end
 
 // --- utils MESSAGE -------------
-// divider-start (for github)
-// ──────────────────────────────────────────────────────────────────────────────────
-// ────────────────────── START OF GITHUB COPY/PASTE (message) ──────────────────────
+// ────────────────────── utils MESSAGE ──────────────────────
 
 function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
     // MyMessageInstance.message("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
@@ -333,8 +326,7 @@ const MyMessageInstance = new DYNAMIC_MESSAGE();
 
 // Make it available globally
 window.MyMessageInstance = MyMessageInstance;
-// ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
-// ──────────────────────────────────────────────────────────────────────
+
 // divider-end
 
 // ─── SIZE 17 ─────────────
@@ -362,9 +354,7 @@ window.MyMessageInstance = MyMessageInstance;
 // message("third some sort of window  s15", "GUI_v6", "blue", 0, "y85", 15, 3600000)
 
 // --- utils COUNTDOWN -------------
-// divider-start (for github)
-// ───────────────────────────────────────────────────────────────────────────────────────
-// ────────────────────── START OF GITHUB COPY/PASTE (countdown ms) ──────────────────────
+// ────────────────────── utils COUNTDOWN ──────────────────────
 
 // Global variables for countdown
 let countdownTimer = null;
@@ -423,8 +413,3 @@ function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
         }
     };
 }
-
-// ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
-// ──────────────────────────────────────────────────────────────────────
-// divider-end
-
