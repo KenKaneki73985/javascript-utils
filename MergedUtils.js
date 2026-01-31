@@ -1,7 +1,9 @@
+// --- utils GENERAL -------------
+// divider-start (for github)
 // ──────────────────────────────────────────────────────────────────────────────────
 // ────────────────────── START OF GITHUB COPY/PASTE (general) ──────────────────────
-// reload_ID = "idddD74L"
-// reload_TIME = February 01, 1:06 AM 2026
+// reload_ID = "iddd1BUHZ"
+// reload_TIME = February 01, 1:22 AM 2026
 
 let STAY_LOOP = true
 let HAS_EXECUTED = false
@@ -184,3 +186,245 @@ function FindTextElement(text, message="hide"){
 
 // ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
 // ──────────────────────────────────────────────────────────────────────
+// divider-end
+
+// --- utils MESSAGE -------------
+// divider-start (for github)
+// ──────────────────────────────────────────────────────────────────────────────────
+// ────────────────────── START OF GITHUB COPY/PASTE (message) ──────────────────────
+
+function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
+    // MyMessageInstance.message("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
+    MyMessageInstance.message(text, GUI, color, extra_xpos, ypos, fontsize, time)
+    // log(text)
+}
+
+function hide_GUI(GUI){
+    message("hide GUI", GUI, "green", 0, "y180", 16, 100) // 180 = vertically hidden
+}
+
+class DYNAMIC_MESSAGE {
+    constructor() {
+        this.messageElements = {}; // Store references to active MyMessageInstance elements
+        this.fadeTimers = {}; // Store references to fade timers
+    }
+
+    message(text, category, bgColor = 'green', extra_xpos = 0, ypos = "y10", fontSize = 10, duration = 2000) {
+        // Remove existing MyMessageInstance with this category if it exists
+        this.hideMessage(category);
+        
+        // Create MyMessageInstance element
+        const messageElement = document.createElement('div');
+        messageElement.innerText = text;
+        messageElement.style.position = 'fixed'
+        messageElement.style.zIndex = '9999'
+
+        // ─── padding ─────────────
+        // NOTES: padding top/bot in claude.ai is streched out
+        // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - May 2025 
+        messageElement.style.paddingTop    = "9px"
+        messageElement.style.paddingBottom = "9px"
+        messageElement.style.paddingLeft   = "12px"
+        messageElement.style.paddingRight  = "12px"
+
+        messageElement.style.borderRadius = '4px'
+        messageElement.style.color = 'white'
+        messageElement.style.fontFamily = "Consolas"
+        messageElement.style.fontSize = `${fontSize}px`
+        messageElement.style.backgroundColor = bgColor;
+        messageElement.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)'
+        messageElement.style.transition = 'opacity 1s ease-in-out'
+        messageElement.style.opacity = '1'; // Start fully visible
+        // messageElement.style.opacity = '.8'; // Start fully visible
+        
+        // ▬▬▬ CENTERING ▬▬▬▬▬▬▬▬▬▬▬▬▬
+        // higher num = text goes left more (for text_length * 5.1)
+        // lower num = text goes right more (for text_length * 5.1)
+
+        const text_length = text.length
+        let xpos_percent = 0
+
+        // pinVSCODE
+        // ─── FONT SIZE 17 ─────────────
+        if (fontSize == 17){
+            const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
+            // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
+            xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
+        } 
+
+        // ─── FONT SIZE 15 ─────────────
+        else if (fontSize == 15){
+            const percent_per_char = text_length * 0.28 // 0.31 (ok for short)
+            // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
+            xpos_percent = 49.3 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
+        } 
+        
+        // ─── FONT SIZE NOT SET ─────────────
+        else {
+            const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
+            xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
+        }
+
+        // ▬▬▬ X POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
+        messageElement.style.left = `${xpos_percent}%`
+
+        // ▬▬▬ Y POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
+        const numeric_part_ypos = ypos.replace(/[^0-9]/g, '');
+        const integer_ypos_percent = parseInt(numeric_part_ypos, 10)
+        messageElement.style.top = `${integer_ypos_percent}%`
+
+        // ─── Add to DOM ─────────────
+        document.body.appendChild(messageElement);
+        this.messageElements[category] = messageElement;
+        
+        // ─── Set timeout to start fade ─────────────
+        const fadeDelay = 1000; // Start fading 1000ms before removal
+        const fadeStartTime = duration - fadeDelay;
+        
+        // ─── Clear any existing timers for this category ─────────────
+        if (this.fadeTimers[category]) {
+            clearTimeout(this.fadeTimers[category]);
+        }
+        
+        // ─── Set timer to start the fadeout ─────────────
+        this.fadeTimers[category] = setTimeout(() => {
+            if (this.messageElements[category] === messageElement) {
+                messageElement.style.opacity = '0';
+                
+                // Set another timeout for actual removal after fade completes
+                setTimeout(() => {
+                    // Only remove if this element is still the active one for this category
+                    if (this.messageElements[category] === messageElement) {
+                        this.hideMessage(category);
+                    }
+                }, fadeDelay);
+            }
+        }, fadeStartTime);
+        
+        return messageElement;
+    }
+    
+    // Hide/remove a specific MyMessageInstance
+    hideMessage(category) {
+        if (this.messageElements[category]) {
+            document.body.removeChild(this.messageElements[category]);
+            delete this.messageElements[category];
+            
+            // Clear any pending fade timers
+            if (this.fadeTimers[category]) {
+                clearTimeout(this.fadeTimers[category]);
+                delete this.fadeTimers[category];
+            }
+        }
+    }
+    
+    // Hide all active messages
+    hideAllMessages() {
+        for (const category in this.messageElements) {
+            if (this.messageElements.hasOwnProperty(category)) {
+                this.hideMessage(category);
+            }
+        }
+    }
+}
+
+// Create a global instance of the MyMessageInstance system
+const MyMessageInstance = new DYNAMIC_MESSAGE();
+
+// Make it available globally
+window.MyMessageInstance = MyMessageInstance;
+// ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
+// ──────────────────────────────────────────────────────────────────────
+// divider-end
+
+// ─── SIZE 17 ─────────────
+// message("w", "GUI_v1", "blue", 0, 75, 17, 3600000)
+// message("wwww", "GUI_v2", "blue", 0, "y80", 17, 3600000)
+// message("www www", "GUI_v3", "blue", 0, 85, 17, 3600000)
+// message("first || .. hello a how to a life s17", "GUI_v1", "blue", 0, "y75", 17, 3600000)
+// message("second where did I go ?|| ... s17", "GUI_v2", "blue", 0, "y80", 17, 3600000)
+// message("third some sort of window  s17", "GUI_v3", "blue", 0, "y85", 17, 3600000)
+
+// message("first || .. hello a how to a life s17", "GUI_v1", "blue", 0, "y80", 17, 3600000)
+// message("hello there wassup", "GUI_v1", "blue", 0, "y80", 17, 3000)
+
+// ─── SIZE 16 ─────────────
+// message("first || .. hello a how to a life s16", "GUI_v1", "blue", 0, 75, 16, 3600000)
+// message("second where did I go ?|| ... s16", "GUI_v2", "blue", 0, "y80", 16, 3600000)
+// message("third some sort of window  s16", "GUI_v3", "blue", 0, 85, 16, 3600000)
+
+// ─── SIZE 15 ─────────────
+// message("w", "GUI_v1", "blue", 0, "y55", 15, 3600000)
+// message("wwww", "GUI_v2", "blue", 0, "y60", 15, 3600000)
+// message("www www", "GUI_v3", "blue", 0, "y65", 15, 3600000)
+// message("first || .. hello how to save a life s15", "GUI_v4", "blue", 0, "y75", 15, 3600000)
+// message("second where did I go ?|| ... s15", "GUI_v5", "blue", 0, "y80", 15, 3600000)
+// message("third some sort of window  s15", "GUI_v6", "blue", 0, "y85", 15, 3600000)
+
+// --- utils COUNTDOWN -------------
+// divider-start (for github)
+// ───────────────────────────────────────────────────────────────────────────────────────
+// ────────────────────── START OF GITHUB COPY/PASTE (countdown ms) ──────────────────────
+
+// Global variables for countdown
+let countdownTimer = null;
+let countdownStartTime = 0;
+
+function test_countdown(){
+    alert("test counddown October 10, 6:22 PM 2025")
+}
+
+function countdown_with_ms(count, category, bgColor, xOffset, yPos, fontSize) {
+    // Clear existing timer if running
+    if (countdownTimer) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+    }
+    
+    // Initialize countdown
+    countdownStartTime = Date.now();
+    
+    // Function to update the display
+    function UPDATE_DISPLAY() {
+        const elapsed = (Date.now() - countdownStartTime) / 1000;
+        const remaining = count - elapsed;
+        
+        if (remaining <= 0) {
+            // Stop the timer
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+            
+            // Hide the countdown message
+            window.message.hideMessage(category);
+            
+            return;
+        }
+        
+        // Format the display text with one decimal place
+        const displayText = remaining.toFixed(1);
+        
+        // pinVSCODE
+        // Show the countdown message
+        message(displayText, "countdown_GUI", "black", -0.1, "y75", 17, 100)
+    }
+    
+    // Start the timer to update every 100ms for smoother countdown
+    countdownTimer = setInterval(UPDATE_DISPLAY, 100);
+    
+    // Initial display update
+    UPDATE_DISPLAY();
+    
+    // Return a function to cancel the countdown
+    return function cancelCountdown() {
+        if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+            window.message.hideMessage(category);
+        }
+    };
+}
+
+// ────────────────────── END OF GITHUB COPY/PASTE ──────────────────────
+// ──────────────────────────────────────────────────────────────────────
+// divider-end
+
