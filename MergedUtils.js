@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd2MMPX"
-// reload_TIME = February 01, 2:44 AM 2026
+// reload_ID = "iddd3AWSI"
+// reload_TIME = February 01, 2:55 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -12,6 +12,10 @@ function log(text) {
 }
 
 function log____(text) {
+    console.log(text)
+}
+
+function console(text){
     console.log(text)
 }
 
@@ -44,7 +48,7 @@ async function sys_SetWintitle(signal, data = '', ms = 2000) {
 }
 
 // â”€â”€â”€ SVG MAKER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// sys_AddSVG(OpenHistory,    "fixed", '2.7%',  '82.9%',  '<svg width="24px" height="24px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M5.81824 6.72729V14H13.091" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C16.598 4 10.1351 8.02111 6.67677 13.9981" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M24.005 12L24.0038 24.0088L32.4832 32.4882" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>')
+// sys_AddSVG(OpenHistory, "fixed", '2.7%',  '82.9%',  '<svg width="24px" height="24px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M5.81824 6.72729V14H13.091" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C16.598 4 10.1351 8.02111 6.67677 13.9981" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M24.005 12L24.0038 24.0088L32.4832 32.4882" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>')
 function sys_AddSVG(callback, pos, top, left, svg_string){
     let SVG_BTN = document.createElement('button')
     SVG_BTN.innerHTML = svg_string
@@ -174,7 +178,7 @@ function sys_FindTextElement(text, message="hide"){
     }
 
     if (FoundElement) {
-        
+
         if (message == "showGUI")  
             message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
