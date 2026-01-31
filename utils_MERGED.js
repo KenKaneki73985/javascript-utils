@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd159O"
-// reload_TIME = February 01, 5:00 AM 2026
+// reload_ID = "iddd1GGW0"
+// reload_TIME = February 01, 5:24 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -105,7 +105,6 @@ function sys_GetTopChildrenDoAction(ContainerID, callback) {
 // }
 
 async function sys_WaitTextToExist(text, message="hide"){
-    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
@@ -127,7 +126,6 @@ async function sys_WaitTextToExist(text, message="hide"){
 }
 
 async function sys_WaitElementToExist(ElementID, message="hide"){
-    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
@@ -155,7 +153,6 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
 // ElementOfText.click()
 
 function sys_FindElementOfText(text, message="hide"){
-    // âš ï¸ WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     let AllElements_arr = Array.from(document.querySelectorAll("*"))
     let ElementOfText   = AllElements_arr.find(FindElementOfText)
@@ -168,8 +165,7 @@ function sys_FindElementOfText(text, message="hide"){
             return true
 
         function FoundTextNodeFromCurrentElement(ChildNode) {
-            // if current element child node is a text node...
-            // and that text node is the 'text' variable (eg. Songs)...
+            // if current element child node is a text node, and that text node is the 'text' variable (eg. Songs),
             // return that element (return true)
             if (ChildNode.nodeType === Node.TEXT_NODE && ChildNode.textContent == text)
                 return true
