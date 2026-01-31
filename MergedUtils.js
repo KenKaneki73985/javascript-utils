@@ -1,6 +1,6 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "idddBRAA"
-// reload_TIME = February 01, 3:05 AM 2026
+// reload_ID = "idddFIJ7"
+// reload_TIME = February 01, 3:07 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -40,7 +40,7 @@ async function sys_SetWintitle(signal, data = '', ms = 2000) {
     sys_GetOriginalTitle()  
     
     document.title = signal + " " + data
-    log("success: wintitle set: " + signal)
+    ConsoleLog("success: wintitle set: " + signal)
 
     await sleep(ms) // 2 seconds
 
@@ -88,20 +88,20 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
     
     else {
         // message("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
-        log("âŒ error: PostsContainer not found (gen_GetTopChildrenDoAction)")
+        ConsoleLog("âŒ error: PostsContainer not found (gen_GetTopChildrenDoAction)")
     }
 }
 
 // â”€â”€â”€ FOREEACH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // function POST_ACTION(SingleTopChild, index, array) {
-//     log(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
-//     log(SingleTopChild.innerText)
+//     ConsoleLog(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
+//     ConsoleLog(SingleTopChild.innerText)
 // }
 
 // â”€â”€â”€ FOR LOOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // function POST_ACTION(TopChildren_arr, index) {
-//     log(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
-//     log(TopChildren_arr[index].innerText)
+//     ConsoleLog(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
+//     ConsoleLog(TopChildren_arr[index].innerText)
 // }
 
 async function sys_WaitTextToExist(text, message="hide"){
@@ -114,14 +114,14 @@ async function sys_WaitTextToExist(text, message="hide"){
             if (message == "showGUI") 
                 message('â˜‘ï¸ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
-            log('â˜‘ï¸ success: found "' + text + '" (sys_WaitTextToExist)')
+            ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_WaitTextToExist)')
             break
         }
 
         if (message == "showGUI")  
             message('â³ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
 
-        log('â³ waiting for "' + text + '" (sys_WaitTextToExist)')
+        ConsoleLog('â³ waiting for "' + text + '" (sys_WaitTextToExist)')
         await sleep(100)
     }
 }
@@ -138,7 +138,7 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
             if (message == "showGUI") 
                 message('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
             
-            log('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
+            ConsoleLog('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
             return Element
             // break
         }
@@ -146,7 +146,7 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
         if (message == "showGUI")  
             message('â³ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
 
-        log('â³ waiting for "' + Element + '" (sys_WaitElementToExist)')
+        ConsoleLog('â³ waiting for "' + Element + '" (sys_WaitElementToExist)')
         await sleep(100)
     }
 }
@@ -182,8 +182,8 @@ function sys_FindTextElement(text, message="hide"){
         if (message == "showGUI")  
             message('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
-        log('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
-        log('â˜‘ï¸ FoundElement: ' + FoundElement + ' (sys_FindTextElement)')
+        ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_FindTextElement)')
+        ConsoleLog('â˜‘ï¸ FoundElement: ' + FoundElement + ' (sys_FindTextElement)')
         return FoundElement
     } 
     
@@ -192,7 +192,7 @@ function sys_FindTextElement(text, message="hide"){
         if (message == "showGUI") 
             message('âŒ error: not found "' + text + '" (sys_FindTextElement)', "GUI_v1", "red", 0, "y80", 17, 3000) 
 
-        log('âŒ error: not found "' + text + '" (sys_FindTextElement)')
+        ConsoleLog('âŒ error: not found "' + text + '" (sys_FindTextElement)')
         return false
     }
 }
