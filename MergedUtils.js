@@ -1,5 +1,5 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd4CM0"
+// reload_ID = "iddd5B0Q"
 // reload_TIME = February 01, 2:02 AM 2026
 
 let STAY_LOOP = true
@@ -18,16 +18,16 @@ function sys_StayLoopOffOn() {
     }, 1000);
 }
 
-function gen_GET_ORIGINAL_TITLE(){
+function sys_GetOriginalTitle(){
     if (HAS_EXECUTED) return
     ORIGINAL_TITLE = document.title
     // setTimeout(() => { HAS_EXECUTED = false }, 36000000) 
     HAS_EXECUTED = true // don't get title ever again
 }    
 
-async function gen_SET_WINTITLE(signal, data = '', ms = 2000) {
+async function sys_SetWintitle(signal, data = '', ms = 2000) {
     // ORIGINAL_TITLE = document.title; issue: it gets wrong title, coz "get original title" invokes immediately even before changing back to original title
-    gen_GET_ORIGINAL_TITLE()  
+    sys_GetOriginalTitle()  
     
     document.title = signal + " " + data
     log("success: wintitle set: " + signal)
