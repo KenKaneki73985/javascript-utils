@@ -1,5 +1,5 @@
 // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils GENERAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd6L1U"
+// reload_ID = "iddd73MO"
 // reload_TIME = February 01, 2:03 AM 2026
 
 let STAY_LOOP = true
@@ -101,20 +101,20 @@ function gen_GetTopChildrenDoAction(ContainerID, callback) {
 //     log(TopChildren_arr[index].innerText)
 // }
 
-async function WaitTextToExist(text, message="hide"){
+async function sys_WaitTextToExist(text, message="hide"){
     // WATCH OUT FOR IFRAMES. IT MAY NOT WORK PROPERLY THERE.
 
     while (true) {
 
         if (document.body.innerText.includes(text)){
 
-            message == "showGUI" ? message('â˜‘ï¸ success: found  ' + text + ' (WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
-            log('â˜‘ï¸ success: found "' + text + '" (WaitTextToExist)')
+            message == "showGUI" ? message('â˜‘ï¸ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) : ''
+            log('â˜‘ï¸ success: found "' + text + '" (sys_WaitTextToExist)')
             break
         }
 
-        message == "showGUI" ? message('â³ waiting for "' + text + '" (WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
-        log('â³ waiting for "' + text + '" (WaitTextToExist)')
+        message == "showGUI" ? message('â³ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) : ''
+        log('â³ waiting for "' + text + '" (sys_WaitTextToExist)')
         await sleep(100)
     }
 }
