@@ -1,6 +1,6 @@
 // ────────────────────── utils SYSTEM ──────────────────────
-// reload_ID = "iddd3H1LA"
-// reload_TIME = February 02, 3:58 AM 2026
+// reload_ID = "iddd1JWAP"
+// reload_TIME = February 02, 4:26 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -20,7 +20,7 @@ function ConsoleLog(text){
 }
 
 function TestSnappy(){
-    message('⏳ good game well played', "GUI_v1", "blue", 0, "y80", 17, 3000)
+    message('⚠️ good game', "GUI_v1", "blue", 0, "y80", 17, 3000)
 }
 
 function sys_StayLoopOffOn() {
