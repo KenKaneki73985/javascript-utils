@@ -1,6 +1,6 @@
 // ────────────────────── utils SYSTEM ──────────────────────
-// reload_ID = "idddOR6G"
-// reload_TIME = February 02, 6:11 AM 2026
+// reload_ID = "iddd158PN"
+// reload_TIME = February 02, 6:19 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -197,7 +197,7 @@ function sys_FindElementOfText(text, message="hide"){
 }
 
 function sys_SiteTagAdder(TagRules) {
-    
+
     const OriginalTitleSetter = Object.getOwnPropertyDescriptor(Document.prototype, 'title').set;
     
     Object.defineProperty(document, 'title', {
@@ -219,6 +219,11 @@ function sys_SiteTagAdder(TagRules) {
         }
     });
 }
+
+// sys_SiteTagAdder([
+//     { urlPattern: 'youtube.com/watch', tag: '#YTBW' },  // More specific - checked first
+//     { urlPattern: 'youtube.com',       tag: '#YTB' }          // General - checked second
+// ])
 
 // ────────────────────── utils MESSAGE ──────────────────────
 
