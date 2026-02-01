@@ -1,6 +1,6 @@
 // ────────────────────── utils SYSTEM ──────────────────────
-// reload_ID = "iddd2TDRH"
-// reload_TIME = February 02, 5:47 AM 2026
+// reload_ID = "idddOR6G"
+// reload_TIME = February 02, 6:11 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -196,6 +196,29 @@ function sys_FindElementOfText(text, message="hide"){
     }
 }
 
+function sys_SiteTagAdder(TagRules) {
+    
+    const OriginalTitleSetter = Object.getOwnPropertyDescriptor(Document.prototype, 'title').set;
+    
+    Object.defineProperty(document, 'title', {
+
+        set: function(newTitle) {
+            const currentUrl = window.location.href;
+            
+            // Find matching rule (more specific rules should come first in array)
+            const matchingRule = TagRules.find(rule => currentUrl.includes(rule.urlPattern));
+            
+            if (matchingRule && !newTitle.includes(matchingRule.tag)) 
+                OriginalTitleSetter.call(this, newTitle + ' - ' + matchingRule.tag);
+            else 
+                OriginalTitleSetter.call(this, newTitle);
+        },
+
+        get: function() {
+            return document.getElementsByTagName('title')[0].innerHTML;
+        }
+    });
+}
 
 // ────────────────────── utils MESSAGE ──────────────────────
 
