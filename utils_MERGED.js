@@ -1,6 +1,6 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// reload_ID = "iddd1VOIU"
-// reload_TIME = February 02, 12:31 AM 2026
+// ────────────────────── utils SYSTEM ──────────────────────
+// reload_ID = "iddd2VMZZ"
+// reload_TIME = February 02, 3:48 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -19,6 +19,9 @@ function ConsoleLog(text){
     console.log(text)
 }
 
+function TestSnappy(){
+    message('⏳ good game well played', "GUI_v1", "blue", 0, "y80", 17, 3000)
+}
 function sys_StayLoopOffOn() {
     message("stop loop", "GUI_v1", "red", 0, "y80", 16, 3000)
     StayLoop = false
@@ -47,7 +50,7 @@ async function sys_SetWintitle(signal, data = '', ms = 2000) {
     document.title = OriginalTitle
 }
 
-// â”€â”€â”€ SVG MAKER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SVG MAKER ─────────────
 // sys_AddSVG(OpenHistory, "fixed", '2.7%',  '82.9%',  '<svg width="24px" height="24px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect> <path d="M5.81824 6.72729V14H13.091" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 24C4 35.0457 12.9543 44 24 44V44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C16.598 4 10.1351 8.02111 6.67677 13.9981" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M24.005 12L24.0038 24.0088L32.4832 32.4882" stroke="#0080ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>')
 function sys_AddSVG(callback, pos, top, left, svg_string){
     let SVG_BTN = document.createElement('button')
@@ -67,7 +70,7 @@ function sys_AddSVG(callback, pos, top, left, svg_string){
     document.body.appendChild(SVG_BTN)
 }
 
-// â”€â”€â”€ GET POSTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── GET POSTS ─────────────
 function sys_GetTopChildrenDoAction(ContainerID, callback) {
     
     let PostsContainer = document.querySelector(ContainerID)
@@ -75,11 +78,11 @@ function sys_GetTopChildrenDoAction(ContainerID, callback) {
     if (PostsContainer) {
         // message("success: found PostsContainer", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
-        // â”€â”€â”€ YOU SHOULD USE FOREACH, LOOKS CLEANER. â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── YOU SHOULD USE FOREACH, LOOKS CLEANER. ─────────────
         let TopChildren_arr = Array.from(PostsContainer.children)
         TopChildren_arr.forEach(callback)
         
-        // â”€â”€â”€ FOR LOOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── FOR LOOP ─────────────
         // let TopChildren_arr = PostsContainer.children // get top level/direct/immediate children/descendant
         // for (let index = 0; index < TopChildren_arr.length; index++) {
         //     callback(TopChildren_arr, index)
@@ -88,19 +91,19 @@ function sys_GetTopChildrenDoAction(ContainerID, callback) {
     
     else {
         // message("error: posts container not found", "GUI_v1", "red", 0, "y80", 17, 3000)
-        ConsoleLog("âŒ error: PostsContainer not found (sys_GetTopChildrenDoAction)")
+        ConsoleLog("❌ error: PostsContainer not found (sys_GetTopChildrenDoAction)")
     }
 }
 
-// â”€â”€â”€ FOREEACH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FOREEACH ─────────────
 // function POST_ACTION(SingleTopChild, index, array) {
-//     ConsoleLog(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
+//     ConsoleLog(`───────── Post ${index + 1} ─────────`)
 //     ConsoleLog(SingleTopChild.innerText)
 // }
 
-// â”€â”€â”€ FOR LOOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FOR LOOP ─────────────
 // function POST_ACTION(TopChildren_arr, index) {
-//     ConsoleLog(`â”€â”€â”€â”€â”€â”€â”€â”€â”€ Post ${index + 1} â”€â”€â”€â”€â”€â”€â”€â”€â”€`)
+//     ConsoleLog(`───────── Post ${index + 1} ─────────`)
 //     ConsoleLog(TopChildren_arr[index].innerText)
 // }
 
@@ -111,16 +114,16 @@ async function sys_WaitTextToExist(text, message="hide"){
         if (document.body.innerText.includes(text)){
 
             if (message == "showGUI") 
-                message('â˜‘ï¸ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+                message('☑️ success: found  ' + text + ' (sys_WaitTextToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
-            ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_WaitTextToExist)')
+            ConsoleLog('☑️ success: found "' + text + '" (sys_WaitTextToExist)')
             break
         }
 
         if (message == "showGUI")  
-            message('â³ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
+            message('⏳ waiting for "' + text + '" (sys_WaitTextToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
 
-        ConsoleLog('â³ waiting for "' + text + '" (sys_WaitTextToExist)')
+        ConsoleLog('⏳ waiting for "' + text + '" (sys_WaitTextToExist)')
         await sleep(100)
     }
 }
@@ -134,16 +137,16 @@ async function sys_WaitElementToExist(ElementID, message="hide"){
         if (Element){
 
             if (message == "showGUI") 
-                message('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+                message('☑️ success: found "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
             
-            ConsoleLog('â˜‘ï¸ success: found "' + Element + '" (sys_WaitElementToExist)')
+            ConsoleLog('☑️ success: found "' + Element + '" (sys_WaitElementToExist)')
             return Element
         }
 
         if (message == "showGUI")  
-            message('â³ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
+            message('⏳ waiting for "' + Element + '" (sys_WaitElementToExist)', "GUI_v1", "green", 0, "y80", 17, 3000) 
 
-        ConsoleLog('â³ waiting for "' + Element + '" (sys_WaitElementToExist)')
+        ConsoleLog('⏳ waiting for "' + Element + '" (sys_WaitElementToExist)')
         await sleep(100)
     }
 }
@@ -175,25 +178,25 @@ function sys_FindElementOfText(text, message="hide"){
     if (ElementOfText) {
 
         if (message == "showGUI")  
-            message('â˜‘ï¸ success: found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
+            message('☑️ success: found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "blue", 0, "y80", 17, 3000) 
 
-        ConsoleLog('â˜‘ï¸ success: found "' + text + '" (sys_FindElementOfText)')
-        ConsoleLog('â˜‘ï¸ ElementOfText: ' + ElementOfText + ' (sys_FindElementOfText)')
+        ConsoleLog('☑️ success: found "' + text + '" (sys_FindElementOfText)')
+        ConsoleLog('☑️ ElementOfText: ' + ElementOfText + ' (sys_FindElementOfText)')
         return ElementOfText
     } 
     
     else if (!ElementOfText) {
 
         if (message == "showGUI") 
-            message('âŒ error: not found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "red", 0, "y80", 17, 3000) 
+            message('❌ error: not found "' + text + '" (sys_FindElementOfText)', "GUI_v1", "red", 0, "y80", 17, 3000) 
 
-        ConsoleLog('âŒ error: not found "' + text + '" (sys_FindElementOfText)')
+        ConsoleLog('❌ error: not found "' + text + '" (sys_FindElementOfText)')
         return false
     }
 }
 
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils MESSAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ────────────────────── utils MESSAGE ──────────────────────
 
 function message(text, GUI, color, extra_xpos, ypos, fontsize, time){
     // MyMessageInstance.message("hello", "GUI_v1", "green", 0, "y80", 16, 3000)
@@ -220,7 +223,7 @@ class DYNAMIC_MESSAGE {
         messageElement.style.position = 'fixed'
         messageElement.style.zIndex = '9999'
 
-        // â”€â”€â”€ padding â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── padding ─────────────
         // NOTES: padding top/bot in claude.ai is streched out
         // messageElement.style.padding = '10px 15px 10px 15px'; // top right bot left - May 2025 
         messageElement.style.paddingTop    = "9px"
@@ -238,7 +241,7 @@ class DYNAMIC_MESSAGE {
         messageElement.style.opacity = '1'; // Start fully visible
         // messageElement.style.opacity = '.8'; // Start fully visible
         
-        // â–¬â–¬â–¬ CENTERING â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬
+        // ▬▬▬ CENTERING ▬▬▬▬▬▬▬▬▬▬▬▬▬
         // higher num = text goes left more (for text_length * 5.1)
         // lower num = text goes right more (for text_length * 5.1)
 
@@ -246,48 +249,48 @@ class DYNAMIC_MESSAGE {
         let xpos_percent = 0
 
         // pinVSCODE
-        // â”€â”€â”€ FONT SIZE 17 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── FONT SIZE 17 ─────────────
         if (fontSize == 17){
             const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
             // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
             xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
         } 
 
-        // â”€â”€â”€ FONT SIZE 15 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── FONT SIZE 15 ─────────────
         else if (fontSize == 15){
             const percent_per_char = text_length * 0.28 // 0.31 (ok for short)
             // const percent_per_char = text_length * 0.37 // .3 (bit ok for long)
             xpos_percent = 49.3 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
         } 
         
-        // â”€â”€â”€ FONT SIZE NOT SET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── FONT SIZE NOT SET ─────────────
         else {
             const percent_per_char = text_length * 0.31 // 0.31 (ok for short)
             xpos_percent = 49.2 - percent_per_char + extra_xpos // 49.2 (ok for 0.31 perc)
         }
 
-        // â–¬â–¬â–¬ X POSITION â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬
+        // ▬▬▬ X POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
         messageElement.style.left = `${xpos_percent}%`
 
-        // â–¬â–¬â–¬ Y POSITION â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬â–¬
+        // ▬▬▬ Y POSITION ▬▬▬▬▬▬▬▬▬▬▬▬▬
         const numeric_part_ypos = ypos.replace(/[^0-9]/g, '');
         const integer_ypos_percent = parseInt(numeric_part_ypos, 10)
         messageElement.style.top = `${integer_ypos_percent}%`
 
-        // â”€â”€â”€ Add to DOM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── Add to DOM ─────────────
         document.body.appendChild(messageElement);
         this.messageElements[category] = messageElement;
         
-        // â”€â”€â”€ Set timeout to start fade â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── Set timeout to start fade ─────────────
         const fadeDelay = 1000; // Start fading 1000ms before removal
         const fadeStartTime = duration - fadeDelay;
         
-        // â”€â”€â”€ Clear any existing timers for this category â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── Clear any existing timers for this category ─────────────
         if (this.fadeTimers[category]) {
             clearTimeout(this.fadeTimers[category]);
         }
         
-        // â”€â”€â”€ Set timer to start the fadeout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        // ─── Set timer to start the fadeout ─────────────
         this.fadeTimers[category] = setTimeout(() => {
             if (this.messageElements[category] === messageElement) {
                 messageElement.style.opacity = '0';
@@ -335,7 +338,7 @@ const MyMessageInstance = new DYNAMIC_MESSAGE();
 // Make it available globally
 window.MyMessageInstance = MyMessageInstance;
 
-// â”€â”€â”€ SIZE 17 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SIZE 17 ─────────────
 // message("w", "GUI_v1", "blue", 0, 75, 17, 3600000)
 // message("wwww", "GUI_v2", "blue", 0, "y80", 17, 3600000)
 // message("www www", "GUI_v3", "blue", 0, 85, 17, 3600000)
@@ -346,12 +349,12 @@ window.MyMessageInstance = MyMessageInstance;
 // message("first || .. hello a how to a life s17", "GUI_v1", "blue", 0, "y80", 17, 3600000)
 // message("hello there wassup", "GUI_v1", "blue", 0, "y80", 17, 3000)
 
-// â”€â”€â”€ SIZE 16 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SIZE 16 ─────────────
 // message("first || .. hello a how to a life s16", "GUI_v1", "blue", 0, 75, 16, 3600000)
 // message("second where did I go ?|| ... s16", "GUI_v2", "blue", 0, "y80", 16, 3600000)
 // message("third some sort of window  s16", "GUI_v3", "blue", 0, 85, 16, 3600000)
 
-// â”€â”€â”€ SIZE 15 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── SIZE 15 ─────────────
 // message("w", "GUI_v1", "blue", 0, "y55", 15, 3600000)
 // message("wwww", "GUI_v2", "blue", 0, "y60", 15, 3600000)
 // message("www www", "GUI_v3", "blue", 0, "y65", 15, 3600000)
@@ -359,7 +362,7 @@ window.MyMessageInstance = MyMessageInstance;
 // message("second where did I go ?|| ... s15", "GUI_v5", "blue", 0, "y80", 15, 3600000)
 // message("third some sort of window  s15", "GUI_v6", "blue", 0, "y85", 15, 3600000)
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ utils COUNTDOWN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ────────────────────── utils COUNTDOWN ──────────────────────
 
 // Global variables for countdown
 let countdownTimer = null;
