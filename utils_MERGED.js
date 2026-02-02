@@ -1,6 +1,6 @@
 // ────────────────────── utils SYSTEM ──────────────────────
-// reload_ID = "iddd268UO"
-// reload_TIME = February 02, 6:36 AM 2026
+// reload_ID = "idddBAO"
+// reload_TIME = February 02, 8:00 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
@@ -197,60 +197,36 @@ function sys_FindElementOfText(text, message="hide"){
 }
 
 // function sys_SiteTagAdder(TagRules) {
+//     // Check if we've already intercepted the title property
+//     if (window.__titleIntercepted) {
+//         return;
+//     }
+//     window.__titleIntercepted = true;
 
-//     const OriginalTitleSetter = Object.getOwnPropertyDescriptor(Document.prototype, 'title').set;
+//     const OriginalTitleDescriptor = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+//     const OriginalTitleSetter = OriginalTitleDescriptor.set;
+//     const OriginalTitleGetter = OriginalTitleDescriptor.get;
     
-//     Object.defineProperty(document, 'title', {
-
+//     Object.defineProperty(Document.prototype, 'title', {
 //         set: function(newTitle) {
 //             const currentUrl = window.location.href;
             
 //             // Find matching rule (more specific rules should come first in array)
 //             const matchingRule = TagRules.find(rule => currentUrl.includes(rule.urlPattern));
             
-//             if (matchingRule && !newTitle.includes(matchingRule.tag)) 
+//             if (matchingRule && !newTitle.includes(matchingRule.tag)) {
 //                 OriginalTitleSetter.call(this, newTitle + ' - ' + matchingRule.tag);
-//             else 
+//             } else {
 //                 OriginalTitleSetter.call(this, newTitle);
+//             }
 //         },
-
 //         get: function() {
-//             return document.getElementsByTagName('title')[0].innerHTML;
-//         }
+//             return OriginalTitleGetter.call(this);
+//         },
+//         configurable: true,
+//         enumerable: true
 //     });
 // }
-
-function sys_SiteTagAdder(TagRules) {
-    // Check if we've already intercepted the title property
-    if (window.__titleIntercepted) {
-        return;
-    }
-    window.__titleIntercepted = true;
-
-    const OriginalTitleDescriptor = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
-    const OriginalTitleSetter = OriginalTitleDescriptor.set;
-    const OriginalTitleGetter = OriginalTitleDescriptor.get;
-    
-    Object.defineProperty(Document.prototype, 'title', {
-        set: function(newTitle) {
-            const currentUrl = window.location.href;
-            
-            // Find matching rule (more specific rules should come first in array)
-            const matchingRule = TagRules.find(rule => currentUrl.includes(rule.urlPattern));
-            
-            if (matchingRule && !newTitle.includes(matchingRule.tag)) {
-                OriginalTitleSetter.call(this, newTitle + ' - ' + matchingRule.tag);
-            } else {
-                OriginalTitleSetter.call(this, newTitle);
-            }
-        },
-        get: function() {
-            return OriginalTitleGetter.call(this);
-        },
-        configurable: true,
-        enumerable: true
-    });
-}
 
 // sys_SiteTagAdder([
 //     { urlPattern: 'youtube.com/watch', tag: '#YTBW' },  // More specific - checked first
