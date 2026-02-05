@@ -1,26 +1,32 @@
 // ────────────────────── utils SYSTEM ──────────────────────
-// reload_ID = "iddd2ERJX"
-// reload_TIME = February 02, 11:40 AM 2026
+// 💡 What I learned from tampermonkey:
+// - local host script updates instantly, no issue here
+// - the issue is with tampermonkey, it does not always update
+// - need to wait 10 seconds before it updates to the latest version
+// - need to manually click update in the external tab to immediately get latest version
+
+// 💡 GM_xmlhttpRequest:
+// - unstable. does not always work
+
+// February 06, 7:42 AM 2026
 
 let StayLoop      = true
 let HasExecuted   = false
 let OriginalTitle = false
 let sleep         = (ms) => {return new Promise(resolve => setTimeout(resolve, ms))}
 
-function log(text) {
-    console.log(text)
-}
+// alert('im in merged. first')
+// alert('im in merged. second')
 
-function log____(text) {
-    console.log(text)
-}
+function TestSnappy(){
+    // message("☑️ first - test snappy", "GUI_v1", "blue", 0, "y80", 17, 3000)
+    // message("⚠️ second - test snappy", "GUI_v1", "blue", 0, "y80", 17, 3000)
+    // alert('first - test snappy')
+    alert('second - test snappy')
+}    
 
 function ConsoleLog(text){
     console.log(text)
-}
-
-function TestSnappy(){
-    message("☑️ nice one", "GUI_v1", "blue", 0, "y80", 17, 3000)
 }
 
 function sys_StayLoopOffOn() {
@@ -196,42 +202,121 @@ function sys_FindElementOfText(text, message="hide"){
     }
 }
 
-// function sys_SiteTagAdder(TagRules) {
-//     // Check if we've already intercepted the title property
-//     if (window.__titleIntercepted) {
-//         return;
-//     }
-//     window.__titleIntercepted = true;
-
-//     const OriginalTitleDescriptor = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
-//     const OriginalTitleSetter = OriginalTitleDescriptor.set;
-//     const OriginalTitleGetter = OriginalTitleDescriptor.get;
+function sys_CreateToggleButton(config) {
+    // config = { initialState, storageKey, label, position }
+    let ToggleVar = config.initialState;
     
-//     Object.defineProperty(Document.prototype, 'title', {
-//         set: function(newTitle) {
-//             const currentUrl = window.location.href;
-            
-//             // Find matching rule (more specific rules should come first in array)
-//             const matchingRule = TagRules.find(rule => currentUrl.includes(rule.urlPattern));
-            
-//             if (matchingRule && !newTitle.includes(matchingRule.tag)) {
-//                 OriginalTitleSetter.call(this, newTitle + ' - ' + matchingRule.tag);
-//             } else {
-//                 OriginalTitleSetter.call(this, newTitle);
-//             }
-//         },
-//         get: function() {
-//             return OriginalTitleGetter.call(this);
-//         },
-//         configurable: true,
-//         enumerable: true
-//     });
-// }
+    const container = document.createElement('div')
+    container.style.cssText = `
+        position: fixed;
+        top: ${config.position?.top || '1.8%'};
+        left: ${config.position?.left || '80%'};
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    `
 
-// sys_SiteTagAdder([
-//     { urlPattern: 'youtube.com/watch', tag: '#YTBW' },  // More specific - checked first
-//     { urlPattern: 'youtube.com',       tag: '#YTB' }          // General - checked second
-// ])
+    const labelText = document.createElement('span')
+    labelText.textContent = config.label || 'toggle'
+    labelText.style.cssText = `
+        font-size: 10px;
+        font-weight: 500;
+        color: white;
+        user-select: none;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    `
+
+    // pinVSCODE
+    const switchLabel = document.createElement('label')
+    // switchLabel.id = 'SidebarToggleID'
+    switchLabel.id = config.label + 'ToggleID'
+    switchLabel.style.cssText = `
+        position: relative;
+        display: inline-block;
+        width: 25px;
+        height: 13px;
+        cursor: pointer;
+    `
+
+    const checkbox = document.createElement('input')
+    checkbox.type = 'checkbox'
+    checkbox.checked = ToggleVar
+    checkbox.style.cssText = `
+        opacity: 0;
+        width: 0;
+        height: 0;
+    `
+
+    const slider = document.createElement('span')
+    slider.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: ${ToggleVar ? '#2196F3' : '#ccc'};
+        border-radius: 26px;
+        transition: 0.3s;
+    `
+
+    const SliderButton = document.createElement('span')
+    SliderButton.style.cssText = `
+        position: absolute;
+        content: "";
+        height: 7px;
+        width: 7px;
+        left: 3px;
+        bottom: 3px;
+        background-color: black;
+        border-radius: 50%;
+        transition: 0.3s;
+        transform: ${ToggleVar ? 'translateX(11px)' : 'translateX(0)'};
+    `
+
+    slider.appendChild(SliderButton)
+    switchLabel.appendChild(checkbox)
+    switchLabel.appendChild(slider)
+    container.appendChild(labelText)
+    container.appendChild(switchLabel)
+
+    checkbox.addEventListener('change', function(){
+        ToggleVar = !ToggleVar
+        
+        if (ToggleVar) {
+            slider.style.backgroundColor = '#2196F3'
+            SliderButton.style.transform = 'translateX(11px)'
+        } else {
+            slider.style.backgroundColor = '#ccc'
+            SliderButton.style.transform = 'translateX(0)'
+        }
+        
+        // Save with unique key
+        localStorage.setItem(config.storageKey, ToggleVar)
+        
+        // Call optional callback
+        if (config.onChange) {
+            config.onChange(ToggleVar)
+        }
+    })
+
+    document.body.appendChild(container)
+    
+    return { 
+        slider, 
+        SliderButton,
+        getValue: () => ToggleVar,
+        setValue: (newValue) => {
+            ToggleVar = newValue
+            checkbox.checked = newValue
+            slider.style.backgroundColor = newValue ? '#2196F3' : '#ccc'
+            SliderButton.style.transform = newValue ? 'translateX(11px)' : 'translateX(0)'
+            localStorage.setItem(config.storageKey, newValue)
+        }
+    }
+}    
+
 
 // ────────────────────── utils MESSAGE ──────────────────────
 
